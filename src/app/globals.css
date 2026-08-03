@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* ============================================
+   EU AMO MATRICULAS — Editorial wine-cellar theme
+   Tokens herdados do design system Claraval (vinho/red).
+   Duas fontes apenas: Fraunces (display) + DM Sans (body).
+   ============================================ */
+
+:root {
+  /* Accent — Wine Red (herdado do Claraval) */
+  --red-50: #fdf2f4;
+  --red-100: #fbe4e8;
+  --red-200: #f5c2cb;
+  --red-300: #e8939f;
+  --red-400: #d75c70;
+  --red-500: #bc2649;
+  --red-600: #9a1c3a;
+  --red-700: #7a1530;
+  --red-800: #5d1027;
+  --red-900: #3f0a1c;
+
+  /* Ink — warm near-black base */
+  --ink-950: #0d0809;
+  --ink-900: #140d0f;
+  --ink-850: #1c1315;
+  --ink-800: #241a1c;
+  --ink-700: #322427;
+
+  /* Warm paper neutrals */
+  --paper-50: #faf5ee;
+  --paper-100: #f4ede4;
+  --paper-200: #e7dccf;
+  --paper-300: #cdbca9;
+
+  /* Reading tones on dark */
+  --text-strong: #f6efe6;
+  --text-muted: #b6a79c;
+  --text-faint: #8a7a70;
+
+  --success: #10b981;
+
+  --shadow-card: 0 24px 60px -30px rgb(0 0 0 / 0.7);
+  --shadow-red: 0 10px 30px -12px rgb(188 38 73 / 0.55);
+}
+
+@theme inline {
+  --color-red-50: var(--red-50);
+  --color-red-100: var(--red-100);
+  --color-red-200: var(--red-200);
+  --color-red-300: var(--red-300);
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-600: var(--red-600);
+  --color-red-700: var(--red-700);
+  --color-red-800: var(--red-800);
+  --color-red-900: var(--red-900);
+
+  --color-ink-950: var(--ink-950);
+  --color-ink-900: var(--ink-900);
+  --color-ink-850: var(--ink-850);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+
+  --color-paper-50: var(--paper-50);
+  --color-paper-100: var(--paper-100);
+  --color-paper-200: var(--paper-200);
+  --color-paper-300: var(--paper-300);
+
+  --color-text-strong: var(--text-strong);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+
+  --color-success: var(--success);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink-950);
+  color: var(--text-strong);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  font-weight: 500;
+}
+
+::selection {
+  background: var(--red-500);
+  color: var(--paper-50);
+}
+
+/* Subtle film-grain overlay — atmosphere without gradients */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   MOTION — one orchestrated load-in + reveals
+   ============================================ */
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.18s; }
+.d3 { animation-delay: 0.28s; }
+.d4 { animation-delay: 0.38s; }
+.d5 { animation-delay: 0.5s; }
+
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spin { animation: spin 1s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
+  html { scroll-behavior: auto; }
+}
