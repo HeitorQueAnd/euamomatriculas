@@ -73,9 +73,9 @@ export default async function AdminPage() {
 
       {!hasStorage && (
         <p className="mt-3 rounded-lg bg-amber-100 p-3 text-[13px] text-amber-900">
-          Armazenamento persistente não configurado — os registros estão apenas em
-          memória e somem a cada deploy/restart. Configure{" "}
-          <code>KV_REST_API_URL</code> e <code>KV_REST_API_TOKEN</code>.
+          Banco não configurado — os registros estão indo para um arquivo
+          temporário e somem a cada deploy/restart. Configure a variável{" "}
+          <code>DATABASE_URL</code> (Prisma Postgres).
         </p>
       )}
 

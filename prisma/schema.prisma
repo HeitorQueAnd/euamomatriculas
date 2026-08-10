@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Log de acesso: uma linha por pageview ou por envio do formulario.
+model AccessLog {
+  id        String   @id @default(uuid())
+  /// "pageview" | "lead"
+  type      String
+  /// "/" ou "/revista"
+  route     String
+  createdAt DateTime @default(now())
+
+  ip        String?
+  userAgent String?
+  referer   String?
+  country   String?
+  city      String?
+  /// Query string da visita (utm_source, etc)
+  query     String?
+
+  // Preenchidos so quando type = "lead"
+  nome      String?
+  email     String?
+  telefone  String?
+  escola    String?
+
+  @@index([type, createdAt])
+  @@map("access_log")
+}
