@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { LeadForm } from "./LeadForm";
+import { PageViewTracker } from "./PageViewTracker";
 import type { Origin } from "@/lib/origin";
 
 const WHATSAPP =
@@ -80,6 +81,8 @@ const FOTOS = [
 export function Landing({ origin }: { origin: Origin }) {
   return (
     <div className="relative">
+      {/* Log de acesso: registra a visita da rota em /api/track. */}
+      <PageViewTracker route={origin === "revista" ? "/revista" : "/"} />
       {/* ================= NAV ================= */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-ink-950/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">

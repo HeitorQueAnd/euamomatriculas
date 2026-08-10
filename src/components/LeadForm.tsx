@@ -39,6 +39,25 @@ export function LeadForm({ origin }: { origin: Origin }) {
     // o listener do loader RD roda na mesma fase e captura os campos.
     e.preventDefault();
     setStatus("submitting");
+
+    // Log proprio do envio (independente do RD Station).
+    fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "lead",
+        route: origin === "revista" ? "/revista" : "/",
+        query: window.location.search,
+        nome,
+        email,
+        telefone,
+        escola,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      // tracking e best-effort, nao bloqueia o envio
+    });
+
     // Da um tick para a auto-captura do RD Station processar o submit.
     await new Promise((r) => setTimeout(r, 600));
     setStatus("success");
