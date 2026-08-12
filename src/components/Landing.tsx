@@ -12,7 +12,7 @@ import {
 import { ScrollReveal } from "./ScrollReveal";
 import { LeadForm } from "./LeadForm";
 import { PageViewTracker } from "./PageViewTracker";
-import type { Origin } from "@/lib/origin";
+import { ORIGINS, type Origin } from "@/lib/origin";
 
 const WHATSAPP =
   "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas%202026.";
@@ -82,7 +82,7 @@ export function Landing({ origin }: { origin: Origin }) {
   return (
     <div className="relative">
       {/* Log de acesso: registra a visita da rota em /api/track. */}
-      <PageViewTracker route={origin === "revista" ? "/revista" : "/"} />
+      <PageViewTracker route={ORIGINS[origin].path} />
       {/* ================= NAV ================= */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-ink-950/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">

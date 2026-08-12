@@ -16,7 +16,7 @@ type Status = "idle" | "submitting" | "success";
  * registra a conversao; aqui so tratamos o preventDefault e o estado de sucesso.
  */
 export function LeadForm({ origin }: { origin: Origin }) {
-  const { conversionIdentifier, label } = ORIGINS[origin];
+  const { path, conversionIdentifier, label } = ORIGINS[origin];
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -46,7 +46,7 @@ export function LeadForm({ origin }: { origin: Origin }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         type: "lead",
-        route: origin === "revista" ? "/revista" : "/",
+        route: path,
         query: window.location.search,
         nome,
         email,

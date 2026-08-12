@@ -1,4 +1,5 @@
 import { listLogs, hasStorage, type LogEntry } from "@/lib/logs";
+import { TRACKED_ROUTES } from "@/lib/origin";
 
 export const dynamic = "force-dynamic";
 
@@ -65,7 +66,19 @@ export default async function AdminPage() {
   const leads = logs.filter((l) => l.type === "lead");
   const views = logs.filter((l) => l.type === "pageview");
 
-  const count = (route: string) => views.filter((v) => v.route === route).length;
+  /** Uma linha por rota rastreada (ver ORIGINS), mais o que sobrar do log. */
+  const routes = [
+    ...TRACKED_ROUTES,
+    ...[...new Set(logs.map((l) => l.route))].filter(
+      (r) => !TRACKED_ROUTES.includes(r),
+    ),
+  ];
+
+  const byRoute = routes.map((route) => {
+    const v = views.filter((x) => x.route === route).length;
+    const l = leads.filter((x) => x.route === route).length;
+    return { route, views: v, leads: l, rate: v > 0 ? (l / v) * 100 : 0 };
+  });
 
   return (
     <main className="mx-auto max-w-6xl bg-white p-8 text-neutral-900">
@@ -79,18 +92,43 @@ export default async function AdminPage() {
         </p>
       )}
 
-      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {[
-          ["Visitas /", count("/")],
-          ["Visitas /revista", count("/revista")],
-          ["Total de visitas", views.length],
-          ["Formulários enviados", leads.length],
+          ...byRoute.map((r) => [`Visitas ${r.route}`, r.views] as const),
+          ["Total de visitas", views.length] as const,
+          ["Formulários enviados", leads.length] as const,
         ].map(([label, value]) => (
-          <div key={label as string} className="rounded-xl border border-neutral-200 p-4">
+          <div key={label} className="rounded-xl border border-neutral-200 p-4">
             <div className="text-[12px] text-neutral-500">{label}</div>
             <div className="mt-1 text-2xl font-semibold">{value}</div>
           </div>
         ))}
+      </div>
+
+      <h2 className="mt-10 text-lg font-semibold">Por rota</h2>
+      <div className="mt-3 overflow-x-auto">
+        <table className="w-full min-w-[420px] border-collapse text-left text-[13px]">
+          <thead>
+            <tr className="border-b border-neutral-300 text-neutral-500">
+              <th className="py-2 pr-4 font-medium">Rota</th>
+              <th className="py-2 pr-4 font-medium">Visitas</th>
+              <th className="py-2 pr-4 font-medium">Formulários</th>
+              <th className="py-2 pr-4 font-medium">Conversão</th>
+            </tr>
+          </thead>
+          <tbody>
+            {byRoute.map((r) => (
+              <tr key={r.route} className="border-b border-neutral-200">
+                <td className="py-2 pr-4 font-mono">{r.route}</td>
+                <td className="py-2 pr-4">{r.views}</td>
+                <td className="py-2 pr-4">{r.leads}</td>
+                <td className="py-2 pr-4">
+                  {r.views > 0 ? `${r.rate.toFixed(1)}%` : "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       <h2 className="mt-10 text-lg font-semibold">Formulários preenchidos</h2>

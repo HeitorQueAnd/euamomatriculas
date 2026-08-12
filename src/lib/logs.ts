@@ -1,5 +1,6 @@
 /**
- * Log de acesso simples: pageviews (/ e /revista) e envios do form.
+ * Log de acesso simples: pageviews das rotas da landing (ver ORIGINS em
+ * lib/origin.ts) e envios do form.
  *
  * Persistencia: Prisma Postgres (tabela access_log). Se DATABASE_URL nao
  * estiver definida — dev local sem banco — cai para um arquivo JSONL no
@@ -14,7 +15,7 @@ export type LogType = "pageview" | "lead";
 
 export interface LogEntry {
   type: LogType;
-  /** Rota visitada: "/" ou "/revista". */
+  /** Rota visitada: "/", "/revista" ou "/palestra". */
   route: string;
   /** ISO timestamp. */
   at: string;

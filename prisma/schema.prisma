@@ -12,7 +12,7 @@ model AccessLog {
   id        String   @id @default(uuid())
   /// "pageview" | "lead"
   type      String
-  /// "/" ou "/revista"
+  /// "/", "/revista" ou "/palestra"
   route     String
   createdAt DateTime @default(now())
 
