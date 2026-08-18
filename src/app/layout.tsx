@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -39,6 +40,21 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${dmSans.variable} ${fraunces.variable} grain antialiased`}>
         {children}
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18346929691"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-aw-18346929691" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18346929691');
+          `}
+        </Script>
         {/*
           RD Station — mesmo loader/conta do claraval-landing.
           Faz a auto-captura dos forms via o campo hidden conversion_identifier.
