@@ -13,6 +13,9 @@ const ESCOLAS = [
   "Colégio Mult Integral",
   "OASIS",
   "Colégio DOM",
+  "Colégio Harmonia",
+  "IPESSP",
+  "Colégio Desafio",
 ];
 
 /**

@@ -1,8 +1,9 @@
 import { Heart, ArrowRight, ArrowDown, MessageCircle, Check } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
-import { LeadForm } from "./LeadForm";
 import { PageViewTracker } from "./PageViewTracker";
 import { VinhoTintaBand } from "./VinhoTintaBand";
+import { Programacao } from "./Programacao";
+import { FormationForm } from "./FormationForm";
 import { ORIGINS, type Origin } from "@/lib/origin";
 
 const WHATSAPP =
@@ -100,19 +101,6 @@ const TRES_PILARES = [
     text: "Avaliação dos atendimentos em tempo real, devolvida no grupo para atendentes e liderança, com revisão contínua da campanha de matrículas.",
     hasNote: true,
   },
-];
-
-const FOTOS = [
-  { src: "/fotos/evento.jpg", alt: "Time reunido na experiência de pintura guiada" },
-  { src: "/fotos/vinho-tinta.jpg", alt: "Tela, taça e degustação na experiência Vinho e Tinta" },
-  { src: "/fotos/atelie.jpg", alt: "Cavalete e material de pintura preparados para o time" },
-];
-
-const CITIES = ["Brasília", "São Paulo", "Goiânia"];
-
-const BENEFITS = [
-  "Treinamentos online semanais ao vivo",
-  "Acompanhamento dos atendimentos em tempo real",
 ];
 
 export function Landing({ origin }: { origin: Origin }) {
@@ -385,94 +373,9 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
-      {/* ================= VINHO E TINTA (fotos, fundo claro) ================= */}
-      <section className="border-y border-white/[0.06] bg-paper-50 px-6 py-24 text-ink-900">
-        <div className="mx-auto max-w-6xl">
-          <ScrollReveal>
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
-              A experiência Vinho e Tinta
-            </p>
-            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.7rem]">
-              O cuidado com o time também faz parte do método
-            </h2>
-            <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-ink-900/70">
-              As formações presenciais terminam com uma pintura guiada acompanhada de
-              degustação de vinhos, o vinho é opcional. Um momento de saúde mental,
-              descompressão e união, porque um time cuidado é um time que fica.
-            </p>
-          </ScrollReveal>
+      <Programacao />
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {FOTOS.map((f, i) => (
-              <ScrollReveal key={f.src} delay={i * 100}>
-                <div className="overflow-hidden rounded-2xl border border-ink-900/[0.12]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={f.src}
-                    alt={f.alt}
-                    className="h-80 w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FORM ================= */}
-      <section id="formulario" className="border-t border-white/[0.06] px-6 py-30">
-        <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1fr_1.05fr]">
-          <ScrollReveal className="lg:sticky lg:top-32">
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
-              Entre na formação
-            </p>
-            <h2 className="max-w-[18ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.7rem]">
-              Treine o seu time na Academia Claraval
-            </h2>
-            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-muted">
-              Deixe seu contato e nossa equipe fala com você para agendar a melhor data
-              da sua escola entrar na formação. Vagas limitadas por turma.
-            </p>
-
-            <ul className="mt-9 space-y-4">
-              {BENEFITS.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] text-text-muted">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 border-t border-white/[0.08] pt-7">
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-text-faint">
-                Formação presencial com certificado
-              </p>
-              <div className="flex flex-wrap gap-2.5">
-                {CITIES.map((c) => (
-                  <span
-                    key={c}
-                    className="rounded-full border border-white/[0.12] px-[18px] py-[9px] text-[14px] font-medium text-text-strong"
-                  >
-                    {c}
-                  </span>
-                ))}
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-red-500/55 bg-red-500/[0.12] px-[18px] py-[9px] text-[14px] font-semibold text-text-strong transition-colors hover:border-red-500 hover:bg-red-500"
-                >
-                  Leve para a sua cidade →
-                </a>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={120}>
-            <LeadForm origin={origin} />
-          </ScrollReveal>
-        </div>
-      </section>
+      <FormationForm origin={origin} />
 
       {/* ================= FOOTER ================= */}
       <footer className="border-t border-white/[0.06] px-6 py-14">

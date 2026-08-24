@@ -14,12 +14,13 @@
  *  /          -> QR Code impresso na revista Direcional Escolas
  *  /revista   -> link da revista digital
  *  /palestra  -> QR Code / link divulgado nas palestras e eventos
+ *  /vlupt     -> convite da parceria VLUPT
  *
  * Para criar uma rota nova: adicione a origem aqui e crie o
  * `src/app/<rota>/page.tsx` renderizando <Landing origin="..." />. O tracking
  * e o /admin passam a contar a rota automaticamente.
  */
-export type Origin = "qrcode" | "revista" | "palestra";
+export type Origin = "qrcode" | "revista" | "palestra" | "vlupt";
 
 export interface OriginConfig {
   /** Rota da landing que usa esta origem — tambem e a chave no log de acesso. */
@@ -45,6 +46,11 @@ export const ORIGINS: Record<Origin, OriginConfig> = {
     path: "/palestra",
     conversionIdentifier: "euamomatriculas-palestra",
     label: "Eu Amo Matriculas - Palestra",
+  },
+  vlupt: {
+    path: "/vlupt",
+    conversionIdentifier: "euamomatriculas-vlupt",
+    label: "Eu Amo Matriculas - Convite VLUPT",
   },
 };
 
