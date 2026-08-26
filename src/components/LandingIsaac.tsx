@@ -245,7 +245,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
             </h1>
 
             <p className="rise d3 mt-8 max-w-[58ch] text-[17px] leading-relaxed text-text-muted">
-              A ISAAC e a Claraval têm um convite especial para trazer resultado à sua
+              O ISAAC e a Claraval têm um convite especial para trazer resultado à sua
               campanha de matrículas. Treinar o seu time para ampliar a atração e
               conversão de matrículas.
             </p>
@@ -289,7 +289,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
             </div>
 
             <p className="rise d4 mt-4 max-w-[52ch] text-[14px] leading-relaxed text-text-faint">
-              Agende uma reunião com o consultor da ISAAC para alinhar tudo e confirmar a
+              Agende uma reunião com o consultor do ISAAC para alinhar tudo e confirmar a
               participação do seu time na formação presencial.
             </p>
 
@@ -616,7 +616,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
               Treine o seu time na Academia Claraval
             </h2>
             <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-muted">
-              Preencha o formulário para agendar a sua reunião. Um consultor da ISAAC entra
+              Preencha o formulário para agendar a sua reunião. Um consultor do ISAAC entra
               em contato com a sua escola para alinhar tudo e confirmar a participação do
               seu time na formação presencial.
               <br />
