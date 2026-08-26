@@ -1,13 +1,94 @@
 import { Heart, ArrowRight, ArrowDown, MessageCircle, Check } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
+import { LeadForm } from "./LeadForm";
 import { PageViewTracker } from "./PageViewTracker";
 import { VinhoTintaBand } from "./VinhoTintaBand";
-import { Programacao } from "./Programacao";
-import { FormationForm } from "./FormationForm";
 import { ORIGINS, type Origin } from "@/lib/origin";
 
 const WHATSAPP =
   "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas%202026.";
+
+/** Programação da formação presencial (5h). */
+const PROGRAMACAO = [
+  {
+    hora: "13h30",
+    dur: "30 min",
+    titulo: "Credenciamento e boas-vindas",
+    texto:
+      "Recepção do líder e do time, entrega do material de trabalho e alinhamento do que a escola quer resolver no dia.",
+    topicos: [],
+  },
+  {
+    hora: "14h00",
+    dur: "25 min",
+    titulo: "Campanha de matrículas: da atração à retenção",
+    texto:
+      "Quem já tem campanha rodando revisa e identifica os gargalos. Quem ainda não tem campanha estruturada sai daqui com ela desenhada.",
+    topicos: ["Canais", "Funis", "Metas", "Indicadores", "ICP · definição da família ideal"],
+  },
+  {
+    hora: "14h25",
+    dur: "30 min",
+    titulo: "Canais de atração e prospecção ativa",
+    texto:
+      "Como parar de depender só do tráfego pago. Ativação de até 20 canais e construção da rotina de prospecção com cadências e roteiros de primeiro contato.",
+    topicos: ["Até 20 canais ativados", "Rotina de prospecção", "Cadências e roteiros de contato"],
+  },
+  {
+    hora: "14h55",
+    dur: "50 min",
+    titulo: "Como estruturar o processo comercial",
+    texto:
+      "Da bagunça ao playbook: as cerimônias da rotina comercial, os processos de cada etapa e os 7 passos da matrícula desenhados para a sua escola.",
+    topicos: ["CRM", "Cerimônias e rotina", "Playbook comercial", "Os 7 passos da matrícula"],
+  },
+  {
+    hora: "15h45",
+    dur: "55 min",
+    titulo: "A importância de uma apresentação eficaz",
+    texto:
+      "Estruturando a sua apresentação em introdução, desenvolvimento e conclusão, com storytelling, rapport e gatilhos mentais aplicados às matrículas.",
+    topicos: [
+      "Introdução, desenvolvimento e conclusão",
+      "Storytelling nas matrículas",
+      "Como fazer um ótimo rapport",
+      "Gatilhos mentais",
+      "Recursos visuais que potencializam a matrícula",
+    ],
+  },
+  {
+    hora: "16h40",
+    dur: "30 min",
+    titulo: "Coffee break especial",
+    texto:
+      "Pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.",
+    topicos: [],
+  },
+  {
+    hora: "17h10",
+    dur: "60 min",
+    titulo: "Vinho e Tinta",
+    texto:
+      "Pintura guiada acompanhada de degustação de vinhos, o vinho é opcional. Um respiro no meio da formação, com foco no cuidado com o time e na união antes do último bloco.",
+    topicos: [],
+  },
+  {
+    hora: "18h10",
+    dur: "35 min",
+    titulo: "Como contornar objeções",
+    texto:
+      "Conexão e confiança construídas antes de falar de preço. Cada objeção mapeada com resposta treinada e o fechamento conduzido até a assinatura.",
+    topicos: ["Mapa de objeções", "Ancoragem de valor", "Condução até a assinatura"],
+  },
+  {
+    hora: "18h45",
+    dur: "15 min",
+    titulo: "Plano de 30 dias e certificados",
+    texto:
+      "O que a sua escola executa nas próximas quatro semanas, escrito antes de sair da sala. Entrega dos certificados.",
+    topicos: [],
+  },
+];
 
 /* Para quem é */
 const PAINS = [
@@ -101,6 +182,19 @@ const TRES_PILARES = [
     text: "Avaliação dos atendimentos em tempo real, devolvida no grupo para atendentes e liderança, com revisão contínua da campanha de matrículas.",
     hasNote: true,
   },
+];
+
+const FOTOS = [
+  { src: "/fotos/evento.jpg", alt: "Time reunido na experiência de pintura guiada" },
+  { src: "/fotos/vinho-tinta.jpg", alt: "Tela, taça e degustação na experiência Vinho e Tinta" },
+  { src: "/fotos/atelie.jpg", alt: "Cavalete e material de pintura preparados para o time" },
+];
+
+const CITIES = ["Brasília", "São Paulo", "Goiânia"];
+
+const BENEFITS = [
+  "Treinamentos online semanais ao vivo",
+  "Acompanhamento dos atendimentos em tempo real",
 ];
 
 export function Landing({ origin }: { origin: Origin }) {
@@ -354,6 +448,63 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
+      {/* ================= PROGRAMACAO ================= */}
+      <section className="px-6 py-28">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <p className="mb-4 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+              <span className="inline-block h-0.5 w-[30px] bg-red-500" />
+              Programação da formação presencial
+            </p>
+            <h2 className="max-w-[26ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.8rem]">
+              Cinco horas de formação comercial, com experiência de Vinho e Tinta
+            </h2>
+            <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-text-muted">
+              Cada bloco combina conteúdo, construção e prática guiada. O líder e o time
+              saem com processo desenhado, roteiros escritos e a primeira rodada de treino
+              feita.
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-14 flex flex-col">
+            {PROGRAMACAO.map((b, i) => (
+              <ScrollReveal key={b.hora} delay={i * 50}>
+                <div className="grid gap-8 border-t border-white/[0.08] py-[26px] sm:grid-cols-[150px_1fr]">
+                  <div>
+                    <p className="font-display text-[1.3rem] font-semibold tracking-[-0.01em] text-red-400">
+                      {b.hora}
+                    </p>
+                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-faint">
+                      {b.dur}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-[1.35rem] font-medium leading-tight text-text-strong">
+                      {b.titulo}
+                    </h3>
+                    <p className="mt-2.5 max-w-[74ch] text-[15px] leading-relaxed text-text-muted">
+                      {b.texto}
+                    </p>
+                    {b.topicos.length > 0 && (
+                      <div className="mt-3.5 flex flex-wrap gap-2">
+                        {b.topicos.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-full border border-white/[0.12] bg-red-600/[0.08] px-[15px] py-[7px] text-[13px] font-medium text-paper-200"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ================= QUOTE ================= */}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
@@ -373,9 +524,94 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
-      <Programacao />
+      {/* ================= VINHO E TINTA (fotos, fundo claro) ================= */}
+      <section className="border-y border-white/[0.06] bg-paper-50 px-6 py-24 text-ink-900">
+        <div className="mx-auto max-w-6xl">
+          <ScrollReveal>
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
+              A experiência Vinho e Tinta
+            </p>
+            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.7rem]">
+              O cuidado com o time também faz parte do método
+            </h2>
+            <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-ink-900/70">
+              As formações presenciais terminam com uma pintura guiada acompanhada de
+              degustação de vinhos, o vinho é opcional. Um momento de saúde mental,
+              descompressão e união, porque um time cuidado é um time que fica.
+            </p>
+          </ScrollReveal>
 
-      <FormationForm origin={origin} />
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {FOTOS.map((f, i) => (
+              <ScrollReveal key={f.src} delay={i * 100}>
+                <div className="overflow-hidden rounded-2xl border border-ink-900/[0.12]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={f.src}
+                    alt={f.alt}
+                    className="h-80 w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                  />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FORM ================= */}
+      <section id="formulario" className="border-t border-white/[0.06] px-6 py-30">
+        <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1fr_1.05fr]">
+          <ScrollReveal className="lg:sticky lg:top-32">
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+              Entre na formação
+            </p>
+            <h2 className="max-w-[18ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.7rem]">
+              Treine o seu time na Academia Claraval
+            </h2>
+            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-muted">
+              Deixe seu contato e nossa equipe fala com você para agendar a melhor data
+              da sua escola entrar na formação. Vagas limitadas por turma.
+            </p>
+
+            <ul className="mt-9 space-y-4">
+              {BENEFITS.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[15px] text-text-muted">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 border-t border-white/[0.08] pt-7">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-text-faint">
+                Formação presencial com certificado
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {CITIES.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full border border-white/[0.12] px-[18px] py-[9px] text-[14px] font-medium text-text-strong"
+                  >
+                    {c}
+                  </span>
+                ))}
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-red-500/55 bg-red-500/[0.12] px-[18px] py-[9px] text-[14px] font-semibold text-text-strong transition-colors hover:border-red-500 hover:bg-red-500"
+                >
+                  Leve para a sua cidade →
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={120}>
+            <LeadForm origin={origin} />
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ================= FOOTER ================= */}
       <footer className="border-t border-white/[0.06] px-6 py-14">
