@@ -50,9 +50,9 @@ const PROGRAMACAO = [
   {
     hora: "16h40",
     dur: "30 min",
-    titulo: "Coffee break especial",
+    titulo: "Recreio do Futuro com a VLUPT",
     texto:
-      "Pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.",
+      "Mais que um coffee break: uma pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes e uma experiência do recreio do futuro com a VLUPT.",
     topicos: [],
   },
   {
