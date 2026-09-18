@@ -13,8 +13,8 @@ const WHATSAPP =
 /** Dados do encontro — o único lugar a editar quando a turma mudar. */
 const EVENTO = [
   { label: "Data", value: "9 de setembro" },
-  { label: "Período", value: "Tarde · 14h às 19h" },
-  { label: "Local", value: "Cidade Monções, São Paulo" },
+  { label: "Período", value: "17h às 22h" },
+  { label: "Local", value: "Brasília, Distrito Federal" },
 ];
 
 /* Para quem é */

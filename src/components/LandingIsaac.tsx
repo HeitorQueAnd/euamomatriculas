@@ -12,22 +12,22 @@ const WHATSAPP =
 /** Dados do encontro — o único lugar a editar quando a turma mudar. */
 const EVENTO = [
   { label: "Data", value: "9 de setembro" },
-  { label: "Período", value: "Tarde · 14h às 19h" },
-  { label: "Local", value: "Cidade Monções, São Paulo" },
+  { label: "Período", value: "17h às 22h" },
+  { label: "Local", value: "Brasília, Distrito Federal" },
 ];
 
 /** Programação da formação presencial (5h). */
 const PROGRAMACAO = [
   {
-    hora: "13h30",
-    dur: "30 min",
+    hora: "17h00",
+    dur: "15 min",
     titulo: "Credenciamento e boas-vindas",
     texto:
       "Recepção do líder e do membro do time, entrega do material de trabalho e alinhamento do que cada escola quer resolver no dia.",
     topicos: [],
   },
   {
-    hora: "14h00",
+    hora: "17h15",
     dur: "25 min",
     titulo: "Campanha de matrículas: da atração à retenção",
     texto:
@@ -35,7 +35,7 @@ const PROGRAMACAO = [
     topicos: ["Canais", "Funis", "Metas", "Indicadores", "ICP · definição da família ideal"],
   },
   {
-    hora: "14h25",
+    hora: "17h40",
     dur: "30 min",
     titulo: "Canais de atração e prospecção ativa",
     texto:
@@ -43,7 +43,7 @@ const PROGRAMACAO = [
     topicos: ["Até 20 canais ativados", "Rotina de prospecção", "Cadências e roteiros de contato"],
   },
   {
-    hora: "14h55",
+    hora: "18h10",
     dur: "50 min",
     titulo: "Como estruturar o processo comercial",
     texto:
@@ -51,7 +51,7 @@ const PROGRAMACAO = [
     topicos: ["CRM", "Cerimônias e rotina", "Playbook comercial", "Os 7 passos da matrícula"],
   },
   {
-    hora: "15h45",
+    hora: "19h00",
     dur: "55 min",
     titulo: "A importância de uma apresentação eficaz",
     texto:
@@ -65,15 +65,15 @@ const PROGRAMACAO = [
     ],
   },
   {
-    hora: "16h40",
-    dur: "30 min",
+    hora: "19h55",
+    dur: "15 min",
     titulo: "Recreio do Futuro",
     texto:
       "Mais que um coffee break: uma pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.",
     topicos: [],
   },
   {
-    hora: "17h10",
+    hora: "20h10",
     dur: "60 min",
     titulo: "Vinho e Tinta",
     texto:
@@ -81,7 +81,7 @@ const PROGRAMACAO = [
     topicos: [],
   },
   {
-    hora: "18h10",
+    hora: "21h10",
     dur: "35 min",
     titulo: "Como contornar objeções",
     texto:
@@ -89,7 +89,7 @@ const PROGRAMACAO = [
     topicos: ["Mapa de objeções", "Ancoragem de valor", "Condução até a assinatura"],
   },
   {
-    hora: "18h45",
+    hora: "21h45",
     dur: "15 min",
     titulo: "Plano de 30 dias e certificados",
     texto:
@@ -510,7 +510,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
           <ScrollReveal>
             <p className="mb-4 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
               <span className="inline-block h-0.5 w-[30px] bg-red-600" />
-              Programação · 9 de setembro · 14h às 19h
+              Programação · 9 de setembro · 17h às 22h
             </p>
             <h2 className="max-w-[26ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.7rem]">
               Cinco horas de formação comercial, com experiência de Vinho e Tinta

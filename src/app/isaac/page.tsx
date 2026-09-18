@@ -5,7 +5,7 @@ import { LandingIsaac } from "@/components/LandingIsaac";
 export const metadata: Metadata = {
   title: "Convite ISAAC — Eu Amo Matrículas",
   description:
-    "Convite especial ISAAC para a formação presencial Eu Amo Matrículas: 9 de setembro, 14h às 19h, Cidade Monções, São Paulo.",
+    "Convite especial ISAAC para a formação presencial Eu Amo Matrículas: 9 de setembro, 17h às 22h, Brasília, Distrito Federal.",
   alternates: { canonical: "https://www.euamomatriculas.com.br/isaac" },
   openGraph: { url: "https://www.euamomatriculas.com.br/isaac" },
 };

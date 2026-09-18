@@ -5,7 +5,7 @@ import { LandingVlupt } from "@/components/LandingVlupt";
 export const metadata: Metadata = {
   title: "Convite VLUPT — Eu Amo Matrículas",
   description:
-    "Convite especial VLUPT para a formação presencial Eu Amo Matrículas: 9 de setembro, 14h às 19h, Cidade Monções, São Paulo.",
+    "Convite especial VLUPT para a formação presencial Eu Amo Matrículas: 9 de setembro, 17h às 22h, Brasília, Distrito Federal.",
   alternates: { canonical: "https://www.euamomatriculas.com.br/vlupt" },
   openGraph: { url: "https://www.euamomatriculas.com.br/vlupt" },
 };
