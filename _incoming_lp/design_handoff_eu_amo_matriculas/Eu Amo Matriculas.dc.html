@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0d0809; color: #f6efe6; font-family: "DM Sans", system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #d75c70; text-decoration: none; }
+  a:hover { color: #f6efe6; }
+  ::selection { background: #bc2649; color: #faf5ee; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes drawLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  input:focus { border-color: #bc2649 !important; box-shadow: 0 0 0 3px rgba(188,38,73,0.15); }
+  input::placeholder { color: rgba(50,36,39,0.35); }
+</style>
+</helmet>
+
+<div style="position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0.04; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+
+  <header style="position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(13,8,9,0.8); backdrop-filter: blur(12px)">
+    <div style="margin: 0 auto; display: flex; max-width: 1152px; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 24px">
+      <a href="#topo" style="display: flex; align-items: center; gap: 6px; font-family: Fraunces, Georgia, serif; font-size: 18px; letter-spacing: -0.02em; color: #f6efe6">
+        <span>Eu AMO</span>
+        <span style="color: #bc2649; font-size: 15px">&#9829;</span>
+        <span>Matrículas</span>
+      </a>
+      <a href="#formulario" style="border: 1px solid rgba(188,38,73,0.4); border-radius: 999px; padding: 8px 20px; font-size: 13px; font-weight: 500; color: #f6efe6; transition: background-color 0.2s, border-color 0.2s" style-hover="border-color: #9a1c3a; background: #9a1c3a; color: #f6efe6">Treinar meu time</a>
+    </div>
+  </header>
+
+  <section id="topo" style="position: relative; overflow: hidden; padding: 96px 24px 88px">
+    <div aria-hidden="true" style="pointer-events: none; position: absolute; right: -160px; top: 25%; height: 520px; width: 520px; border-radius: 999px; opacity: 0.14; filter: blur(120px); background: #bc2649"></div>
+    <div style="margin: 0 auto; display: grid; width: 100%; max-width: 1152px; align-items: center; gap: 64px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
+      <div>
+        <p style="animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.08s backwards; margin: 0 0 28px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #d75c70">
+          <span style="display: inline-block; height: 1px; width: 32px; background: #bc2649"></span>
+          Academia Claraval
+        </p>
+        <h1 style="animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.18s backwards; margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(2.6rem, 4.6vw, 3.9rem); line-height: 1.06; letter-spacing: -0.02em; color: #f6efe6; text-wrap: balance">
+          O maior <span style="position: relative; display: inline-block">movimento<span aria-hidden="true" style="position: absolute; bottom: -4px; left: 0; height: 0.14em; width: 100%; transform-origin: left; border-radius: 999px; background: #bc2649; animation: drawLine 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s backwards"></span></span> de matrículas do Brasil
+        </h1>
+        <p style="animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.28s backwards; margin: 32px 0 0; max-width: 52ch; font-size: 17px; line-height: 1.65; color: #b6a79c">
+          Em vez de dicas e hacks, ensinamos processo, gestão e técnica de vendas. O líder e o time de atendimento da sua escola treinam juntos, na prática, dentro de um único método: <strong style="font-weight: 600; color: #f6efe6">formação presencial</strong>, <strong style="font-weight: 600; color: #f6efe6">formação online para o time</strong> e acompanhamento com a <strong style="font-weight: 600; color: #d75c70">IA Clara</strong>.
+        </p>
+        <div style="animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.38s backwards; margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+          <a href="#formulario" style="display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; background: #bc2649; padding: 14px 28px; font-size: 15px; font-weight: 600; color: #faf5ee; box-shadow: 0 10px 30px -12px rgba(188,38,73,0.55); transition: background-color 0.2s" style-hover="background: #bc2649; color: #faf5ee">Quero treinar meu time <span>&#8594;</span></a>
+          <a href="#formacao" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: #b6a79c" style-hover="color: #f6efe6">Conheça a formação <span>&#8595;</span></a>
+        </div>
+      </div>
+      <div style="animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.28s backwards; display: flex; justify-content: center">
+        <div style="position: relative; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: #140d0f; box-shadow: 0 30px 70px -30px rgba(188,38,73,0.45)">
+          <video src="{{ heroVideo }}" poster="assets/formacao-sala.jpg" autoPlay="autoPlay" muted="muted" loop="loop" playsInline="playsInline" preload="auto" aria-label="Vídeo da formação Eu Amo Matrículas" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; background: #140d0f"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position: relative; overflow: hidden; background: #faf5ee; color: #140d0f; border-top: 1px solid rgba(20,13,15,0.1); border-bottom: 1px solid rgba(20,13,15,0.1); padding: 0 0 112px">
+    <div style="overflow: hidden; border-bottom: 1px solid rgba(20,13,15,0.1); padding: 30px 0; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)">
+      <div style="display: flex; width: max-content; animation: marquee 42s linear infinite">
+        <sc-for list="{{ escolasLoop }}" as="nome" hint-placeholder-count="9">
+          <span style="white-space: nowrap; border-right: 1px solid rgba(20,13,15,0.1); padding: 0 34px; font-family: Fraunces, Georgia, serif; font-size: 1.45rem; font-weight: 500; color: rgba(20,13,15,0.55)">{{ nome }}</span>
+        </sc-for>
+      </div>
+    </div>
+    <div style="margin: 0 auto; display: grid; max-width: 1152px; align-items: start; gap: 64px; padding: 104px 24px 0; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr))">
+      <div data-reveal="1">
+        <p style="margin: 0 0 20px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #9a1c3a">
+          <span style="display: inline-block; height: 1px; width: 32px; background: #9a1c3a"></span>
+          Para quem é
+        </p>
+        <h2 style="margin: 0; max-width: 17ch; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(2rem, 3.2vw, 2.6rem); line-height: 1.1; letter-spacing: -0.02em; color: #140d0f; text-wrap: balance">
+          Se você se identifica com essa situação:<br /><span style="color: #9a1c3a">o Eu Amo Matrículas foi feito para você</span>
+        </h2>
+      </div>
+      <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+        <sc-for list="{{ pains }}" as="p" hint-placeholder-count="8">
+          <div data-reveal="1" style="display: flex; height: 100%; gap: 14px; border-radius: 16px; border: 1px solid rgba(20,13,15,0.12); background: rgba(154,28,58,0.04); padding: 22px; transition: border-color 0.2s, background-color 0.2s" style-hover="border-color: rgba(154,28,58,0.35); background: rgba(154,28,58,0.06)">
+            <span style="display: flex; height: 26px; width: 26px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: #9a1c3a; font-size: 13px; font-weight: 700; color: #faf5ee">&#10003;</span>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(20,13,15,0.7)"><strong style="font-weight: 700; color: #140d0f">{{ p.lead }}</strong> {{ p.rest }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao" style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 112px 24px; color: #f6efe6">
+    <div style="margin: 0 auto; max-width: 1152px">
+      <div data-reveal="1">
+        <p style="margin: 0 0 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #d75c70">O que é o Eu Amo Matrículas</p>
+        <h2 style="margin: 0; max-width: 24ch; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(2.2rem, 3.6vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; color: #f6efe6">Um movimento para trazer resultado à sua campanha de matrículas</h2>
+        <p style="margin: 20px 0 0; max-width: 58ch; font-size: 16px; line-height: 1.65; color: #b6a79c">O conhecimento sai da teoria e vira execução na ponta. A escola inteira entra no mesmo método, do mantenedor ao time de matrículas, e a área comercial passa a operar em desenvolvimento contínuo.</p>
+      </div>
+      <div style="margin-top: 56px; display: grid; gap: 40px 32px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr))">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+          <div data-reveal="1" style="display: flex; height: 100%; flex-direction: column; border-top: 2px solid rgba(154,28,58,0.5); padding-top: 24px">
+            <span style="font-family: Fraunces, Georgia, serif; font-size: 2.6rem; font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: #d75c70">{{ p.n }}</span>
+            <h3 style="margin: 20px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.3rem; font-weight: 600; line-height: 1.2; color: #f6efe6">{{ p.title }}</h3>
+            <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.6; color: #b6a79c">{{ p.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #faf5ee; color: #140d0f; padding: 112px 24px">
+    <div style="margin: 0 auto; max-width: 1152px">
+      <h3 data-reveal="1" style="margin: 0 auto 48px; max-width: 24ch; text-align: center; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.15; letter-spacing: -0.02em; color: #140d0f">O que você irá receber e construir conosco</h3>
+      <div style="display: grid; gap: 48px; align-items: start; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
+      <div data-reveal="1" style="overflow: hidden; border-radius: 16px; border: 1px solid rgba(20,13,15,0.12)">
+        <img src="assets/workbook.jpg" alt="Participante preenchendo o workbook Claraval" style="display: block; height: 560px; width: 100%; object-fit: cover; object-position: center 40%" />
+      </div>
+      <div style="display: grid; gap: 22px">
+        <sc-for list="{{ method }}" as="m" hint-placeholder-count="8">
+          <div data-reveal="1" style="display: flex; align-items: flex-start; gap: 16px; border-bottom: 1px solid rgba(20,13,15,0.1); padding-bottom: 24px">
+            <span style="display: flex; height: 28px; width: 28px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid rgba(154,28,58,0.3); font-size: 13px; color: #9a1c3a">&#10003;</span>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(20,13,15,0.7)">{{ m }}</p>
+          </div>
+        </sc-for>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 112px 24px; color: #f6efe6">
+    <div style="margin: 0 auto; max-width: 1152px">
+      <div data-reveal="1">
+        <p style="margin: 0 0 24px; display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #d75c70">
+          <span style="display: inline-block; height: 2px; width: 30px; background: #bc2649"></span>
+          Como a evolução acontece
+        </p>
+        <h2 style="margin: 0 0 56px; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(2.2rem, 3.8vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: #f6efe6">Os 3 pilares do <span style="color: #d75c70">Eu Amo Matrículas.</span></h2>
+      </div>
+      <div style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <sc-for list="{{ tresPilares }}" as="p" hint-placeholder-count="3">
+          <div data-reveal="1" style="display: flex; height: 100%; flex-direction: column; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); padding: 30px 30px 34px">
+            <span style="font-family: Fraunces, Georgia, serif; font-size: 1.15rem; font-weight: 600; letter-spacing: 0.12em; color: #d75c70">{{ p.roman }}</span>
+            <h3 style="margin: 20px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: #f6efe6">{{ p.title }}</h3>
+            <p style="margin: 18px 0 0; font-size: 14.5px; line-height: 1.6; color: #b6a79c">{{ p.text }}</p>
+            <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+              <p style="margin: 18px 0 0; font-size: 14.5px; line-height: 1.6; color: #b6a79c">Feito pela <strong style="font-weight: 600; color: #d75c70">IA Clara</strong> e pelos analistas da Claraval.</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div data-reveal="1" style="margin-top: 24px; display: grid; align-items: center; gap: 56px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); padding: 44px 40px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+        <div style="text-align: center">
+          <p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: clamp(3rem, 6vw, 4.2rem); font-weight: 600; line-height: 0.95; letter-spacing: -0.03em; color: #d75c70"><span style="vertical-align: 0.42em; font-size: 0.5em">+</span>70</p>
+          <p style="margin: 10px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #f6efe6">Estímulos</p>
+          <p style="margin: 8px 0 0; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.22em; color: #8a7a70">Ao longo dos 3 meses</p>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #b6a79c">Mantenedor, gestores, lideranças e time de matrículas no mesmo ritmo de evolução, cada camada com sua trilha, todas dentro do mesmo método. O resultado é uma área comercial que para de oscilar em picos de animação e passa a operar em desenvolvimento contínuo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #faf5ee; color: #140d0f; padding: 112px 24px">
+    <div style="margin: 0 auto; max-width: 1152px">
+      <div data-reveal="1">
+        <p style="margin: 0 0 16px; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #9a1c3a">
+          <span style="display: inline-block; height: 2px; width: 30px; background: #9a1c3a"></span>
+          Programação da formação presencial
+        </p>
+        <h2 style="margin: 0; max-width: 26ch; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(2.2rem, 3.6vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; color: #140d0f">Formação presencial de 5 horas com certificado</h2>
+        <p style="margin: 20px 0 0; max-width: 62ch; font-size: 16px; line-height: 1.65; color: rgba(20,13,15,0.7)">Cada bloco combina conteúdo, construção e prática guiada. O líder e o time saem com processo desenhado, roteiros escritos e a primeira rodada de treino feita.</p>
+      </div>
+      <div style="margin-top: 56px; display: flex; flex-direction: column">
+        <sc-for list="{{ programacao }}" as="b" hint-placeholder-count="9">
+          <div data-reveal="1" style="display: grid; gap: 32px; border-top: 1px solid rgba(20,13,15,0.12); padding: 26px 0; grid-template-columns: minmax(120px, 150px) minmax(0, 1fr)">
+            <div>
+              <p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; color: #9a1c3a">{{ b.hora }}</p>
+              <p style="margin: 6px 0 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(20,13,15,0.55)">{{ b.dur }}</p>
+            </div>
+            <div>
+              <h3 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 1.35rem; font-weight: 500; line-height: 1.2; color: #140d0f">{{ b.titulo }}</h3>
+              <p style="margin: 10px 0 0; max-width: 74ch; font-size: 15px; line-height: 1.6; color: rgba(20,13,15,0.7)">{{ b.texto }}</p>
+              <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{ b.topicos }}" as="t" hint-placeholder-count="0">
+                  <span style="border: 1px solid rgba(20,13,15,0.14); border-radius: 999px; background: rgba(154,28,58,0.05); padding: 7px 15px; font-size: 13px; font-weight: 500; color: #322427">{{ t }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #faf5ee; color: #140d0f; padding: 96px 24px">
+    <div data-reveal="1" style="margin: 0 auto; max-width: 896px; text-align: center">
+      <span style="font-family: Fraunces, Georgia, serif; font-size: 5rem; line-height: 1; color: rgba(188,38,73,0.7)">&ldquo;</span>
+      <blockquote style="margin: -24px 0 0; font-family: Fraunces, Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.1rem); font-weight: 500; font-style: italic; line-height: 1.3; color: #140d0f">A área comercial para de oscilar em picos de animação e passa a operar em desenvolvimento contínuo.</blockquote>
+      <div style="margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+        <p style="margin: 0; font-size: 15px; font-weight: 600; color: #140d0f">Fernando Zago</p>
+        <p style="margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(20,13,15,0.55)">CEO da Academia Claraval</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 96px 24px; color: #f6efe6">
+    <div style="margin: 0 auto; max-width: 1152px">
+      <div data-reveal="1">
+        <p style="margin: 0 0 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #d75c70">A experiência Tinto e Tinta</p>
+        <h2 style="margin: 0; max-width: 24ch; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(2.2rem, 3.6vw, 2.7rem); line-height: 1.1; letter-spacing: -0.02em; color: #f6efe6">O cuidado com o time também faz parte do método</h2>
+        <p style="margin: 20px 0 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #b6a79c">As formações presenciais terminam com uma pintura guiada acompanhada de degustação de vinhos, o vinho é opcional. Um momento de saúde mental, descompressão e união, porque um time cuidado é um time que fica.</p>
+      </div>
+      <div style="margin-top: 56px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div data-reveal="1" style="overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08)">
+          <img src="assets/tinto-tinta-apresentacao.jpg" alt="Instrutora apresentando a experiência Tinto e Tinta" style="display: block; height: 420px; width: 100%; object-fit: cover; object-position: center 30%" />
+        </div>
+        <div data-reveal="1" style="overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08)">
+          <img src="assets/tinto-tinta-jantar.jpg" alt="Participante mostrando sua tela durante o Tinto e Tinta" style="display: block; height: 420px; width: 100%; object-fit: cover; object-position: 60% center" />
+        </div>
+        <div data-reveal="1" style="overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08)">
+          <img src="assets/tela-palmeira.jpg" alt="Participante com a tela pintada na experiência" style="display: block; height: 420px; width: 100%; object-fit: cover; object-position: center 35%" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" style="background: #faf5ee; color: #140d0f; border-top: 1px solid rgba(20,13,15,0.1); padding: 120px 24px">
+    <div style="margin: 0 auto; display: grid; max-width: 1152px; align-items: start; gap: 56px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr))">
+      <div data-reveal="1">
+        <p style="margin: 0 0 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: #9a1c3a">Entre na formação</p>
+        <h2 style="margin: 0; max-width: 18ch; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(2.2rem, 3.6vw, 2.7rem); line-height: 1.1; letter-spacing: -0.02em; color: #140d0f">Treine o seu time na Academia Claraval</h2>
+        <p style="margin: 20px 0 0; max-width: 46ch; font-size: 16px; line-height: 1.65; color: rgba(20,13,15,0.7)">Deixe seu contato e nossa equipe fala com você para agendar a melhor data da sua escola entrar na formação. Vagas limitadas por turma.</p>
+        <div style="margin-top: 32px; max-width: 460px; border-radius: 16px; background: #140d0f; padding: 26px 28px; box-shadow: 0 24px 50px -30px rgba(20,13,15,0.5)">
+          <p style="margin: 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: #d75c70">Investimento</p>
+          <p style="margin: 12px 0 0; display: flex; align-items: baseline; gap: 8px; font-family: Fraunces, Georgia, serif; color: #f6efe6">
+            <span style="font-size: 1.1rem; font-weight: 500; color: #b6a79c">R$</span>
+            <span style="font-size: clamp(2.6rem, 5vw, 3.2rem); font-weight: 600; line-height: 1; letter-spacing: -0.03em">947,00</span>
+            <span style="font-size: 1.1rem; font-weight: 500; color: #b6a79c">/mês</span>
+          </p>
+        </div>
+        <ul style="margin: 36px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px">
+          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(20,13,15,0.7)"><span style="margin-top: 8px; height: 6px; width: 6px; flex-shrink: 0; border-radius: 999px; background: #9a1c3a"></span>Treinamentos online semanais ao vivo</li>
+          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(20,13,15,0.7)"><span style="margin-top: 8px; height: 6px; width: 6px; flex-shrink: 0; border-radius: 999px; background: #9a1c3a"></span>Acompanhamento dos atendimentos em tempo real</li>
+        </ul>
+        <div style="margin-top: 32px; border-top: 1px solid rgba(20,13,15,0.12); padding-top: 28px">
+          <p style="margin: 0 0 16px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(20,13,15,0.55)">Próximas turmas presenciais · com certificado</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px">
+            <span style="display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid rgba(154,28,58,0.35); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 500; color: #140d0f">Brasília <strong style="font-weight: 700; color: #9a1c3a">27 de outubro</strong></span>
+            <span style="display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid rgba(154,28,58,0.35); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 500; color: #140d0f">São Paulo <strong style="font-weight: 700; color: #9a1c3a">04 de novembro</strong></span>
+            <span style="border: 1px solid rgba(20,13,15,0.14); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 500; color: #140d0f">Goiânia</span>
+            <a href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer" style="border: 1px solid rgba(154,28,58,0.5); border-radius: 999px; background: rgba(154,28,58,0.1); padding: 9px 18px; font-size: 14px; font-weight: 600; color: #140d0f" style-hover="border-color: #bc2649; background: #9a1c3a; color: #faf5ee">Leve para a sua cidade &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="1">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="border-radius: 24px; border: 1px solid #e0d5c6; background: #ffffff; padding: 40px; text-align: center; box-shadow: 0 24px 60px -32px rgba(20,13,15,0.35)">
+            <div style="margin: 0 auto; display: flex; height: 48px; width: 48px; align-items: center; justify-content: center; border-radius: 999px; background: #9a1c3a; font-size: 22px; color: #faf5ee">&#10003;</div>
+            <h3 style="margin: 18px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.4rem; color: #140d0f">Cadastro enviado, {{ firstName }}</h3>
+            <p style="margin: 8px auto 0; max-width: 38ch; font-size: 15px; line-height: 1.6; color: rgba(50,36,39,0.7)">Finalize sua inscrição abaixo com o pagamento seguro.</p>
+            <div style="margin-top: 24px; display: flex; justify-content: center; min-height: 120px">{{ buyButton }}</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="border-radius: 24px; border: 1px solid #e0d5c6; background: #ffffff; padding: 36px 28px; box-shadow: 0 24px 60px -32px rgba(20,13,15,0.35)">
+            <div style="display: flex; flex-direction: column; gap: 20px">
+              <div>
+                <label for="nome" style="margin-bottom: 8px; display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; color: rgba(50,36,39,0.8)">Nome completo</label>
+                <input id="nome" name="nome" type="text" required="required" autoComplete="name" placeholder="Seu nome" value="{{ nome }}" onChange="{{ onNome }}" style="width: 100%; border-radius: 12px; border: 1px solid #e0d5c6; background: #fdfbf7; padding: 14px 16px; font-family: inherit; font-size: 15px; color: #140d0f; outline: none" />
+              </div>
+              <div>
+                <label for="email" style="margin-bottom: 8px; display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; color: rgba(50,36,39,0.8)">E-mail</label>
+                <input id="email" name="email" type="email" required="required" autoComplete="email" placeholder="seu@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="width: 100%; border-radius: 12px; border: 1px solid #e0d5c6; background: #fdfbf7; padding: 14px 16px; font-family: inherit; font-size: 15px; color: #140d0f; outline: none" />
+              </div>
+              <div>
+                <label for="telefone" style="margin-bottom: 8px; display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; color: rgba(50,36,39,0.8)">WhatsApp</label>
+                <input id="telefone" name="telefone" type="tel" required="required" autoComplete="tel" placeholder="(00) 00000-0000" value="{{ telefone }}" onChange="{{ onTelefone }}" style="width: 100%; border-radius: 12px; border: 1px solid #e0d5c6; background: #fdfbf7; padding: 14px 16px; font-family: inherit; font-size: 15px; color: #140d0f; outline: none" />
+              </div>
+              <div>
+                <label for="escola" style="margin-bottom: 8px; display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.01em; color: rgba(50,36,39,0.8)">Nome da escola</label>
+                <input id="escola" name="escola" type="text" placeholder="Colégio Exemplo" value="{{ escola }}" onChange="{{ onEscola }}" style="width: 100%; border-radius: 12px; border: 1px solid #e0d5c6; background: #fdfbf7; padding: 14px 16px; font-family: inherit; font-size: 15px; color: #140d0f; outline: none" />
+              </div>
+              <button type="submit" style="display: inline-flex; width: 100%; align-items: center; justify-content: center; gap: 10px; border: none; border-radius: 12px; background: #9a1c3a; padding: 16px 28px; font-family: inherit; font-size: 15px; font-weight: 600; color: #faf5ee; cursor: pointer; box-shadow: 0 10px 30px -12px rgba(154,28,58,0.5); transition: background-color 0.2s" style-hover="background: #9a1c3a">{{ submitLabel }}</button>
+              <p style="margin: 0; text-align: center; font-size: 12px; line-height: 1.6; color: rgba(50,36,39,0.5)">Ao enviar, você concorda em receber comunicações da Academia Claraval. Seus dados são protegidos conforme a LGPD.</p>
+            </div>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid rgba(255,255,255,0.06); padding: 56px 24px">
+    <div style="margin: 0 auto; max-width: 1152px; text-align: center">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 6px; font-family: Fraunces, Georgia, serif; font-size: 18px; color: #f6efe6">
+        <span>Eu AMO</span>
+        <span style="color: #bc2649; font-size: 15px">&#9829;</span>
+        <span>Matrículas</span>
+      </div>
+      <p style="margin: 16px 0 0; font-size: 14px; color: #b6a79c">Uma iniciativa da <a href="https://www.academiaclaraval.com.br" target="_blank" rel="noopener noreferrer" style="color: #d75c70">Academia Claraval</a></p>
+      <p style="margin: 8px 0 0; font-size: 13px; color: #8a7a70">www.euamomatriculas.com.br</p>
+    </div>
+  </footer>
+
+  <sc-if value="{{ showFab }}" hint-placeholder-val="{{ true }}">
+    <a href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" style="position: fixed; bottom: 24px; right: 24px; z-index: 50; display: flex; height: 56px; width: 56px; align-items: center; justify-content: center; border-radius: 999px; background: #9a1c3a; font-size: 24px; color: #faf5ee; box-shadow: 0 10px 30px -12px rgba(188,38,73,0.55); transition: transform 0.2s" style-hover="transform: scale(1.05)">&#9993;</a>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showFloatingWhatsapp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;},&quot;whatsappUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wa.me/5561999397887&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;heroVideoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Mídia&quot;}}">
+class Component extends DCLogic {
+  state = { nome: "", email: "", telefone: "", escola: "", status: "idle" };
+
+  componentDidMount() {
+    if (this.props.revealOnScroll === false) return;
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = "1";
+        e.target.style.transform = "translateY(0)";
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    nodes.forEach((n, i) => {
+      n.style.opacity = "0";
+      n.style.transform = "translateY(24px)";
+      const d = (i % 6) * 60;
+      n.style.transition = "opacity .7s cubic-bezier(.22,1,.36,1) " + d + "ms, transform .7s cubic-bezier(.22,1,.36,1) " + d + "ms";
+      io.observe(n);
+    });
+    this._io = io;
+  }
+
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+
+  maskPhone(value) {
+    let v = value.replace(/\D/g, "").slice(0, 11);
+    if (v.length > 0) {
+      v = "(" + v;
+      if (v.length > 3) v = v.slice(0, 3) + ") " + v.slice(3);
+      if (v.length > 10) v = v.slice(0, 10) + "-" + v.slice(10);
+    }
+    return v;
+  }
+
+  refId() {
+    const s = this.state;
+    return [s.nome, s.escola, s.telefone.replace(/\D/g, "")].filter(Boolean).join("__").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9_-]+/g, "-").slice(0, 200);
+  }
+
+  buyButton() {
+    if (this.state.status !== "success") return null;
+    if (!document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]')) {
+      const sc = document.createElement("script");
+      sc.async = true; sc.src = "https://js.stripe.com/v3/buy-button.js";
+      document.head.appendChild(sc);
+    }
+    if (!this._bb) this._bb = React.createElement("stripe-buy-button", {
+      "buy-button-id": "buy_btn_1UQoM6CjaH5UL316h9vKpMsX",
+      "publishable-key": "pk_live_51ULTWcCjaH5UL316EBUjzv0KImhjpT44Ag6hgMqsMzTq9g51udKeAbdPpg0iuIfVhW19nAkJy1SXrAk9nPW5A0Et00xcjS6MCA",
+      "customer-email": this.state.email,
+      "client-reference-id": this.refId()
+    });
+    return this._bb;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const escolas = ["Colégio Bambini", "Heavenly", "Colégio Piaget", "Colégio Mult Integral", "OASIS", "Colégio DOM", "Colégio Harmonia", "IPESSP", "Colégio Desafio", "CSFX", "Colégio São Francisco Xavier", "Marista", "Objetivo", "Escola SEB"];
+    return {
+      whatsapp: this.props.whatsappUrl ?? "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas%202026.",
+      showFab: this.props.showFloatingWhatsapp ?? true,
+      heroVideo: this.props.heroVideoUrl || "/videos/lp-matriculas.mp4",
+      hasVideo: !!this.props.heroVideoUrl,
+      noVideo: !this.props.heroVideoUrl,
+      tags: ["Motivação", "União", "Autoconfiança", "Bem-estar", "Gestão de mudança"],
+      escolasLoop: escolas.concat(escolas),
+      pains: [
+        { lead: "Chegam muitos leads, mas eles não viram matrícula.", rest: "E você nunca sabe se o problema está no tráfego pago ou no seu atendimento." },
+        { lead: "Você já levou o time para treinamento.", rest: "Voltou animado, cheio de ideia… e em 30 dias estava tudo exatamente igual." },
+        { lead: "Você aprende, estuda, evolui,", rest: "mas a escola não acompanha o seu ritmo. O conhecimento fica em você e não vira execução na ponta." },
+        { lead: "Você não quer mais um curso, consultoria ou assessoria.", rest: "Quer um plano para executar, com gente que já escalou de verdade do seu lado, o ano inteiro." },
+        { lead: "A escola cresceu e você perdeu a clareza.", rest: "Mais gente, menos matrículas, mais bagunça. Falta processo, falta margem, falta previsibilidade." },
+        { lead: "Você criou até sala de matrículas, mas não tem máquina de vendas.", rest: "Quando o melhor da equipe sai, a meta vai junto com ele." },
+        { lead: "O concorrente cresce mais rápido e mais leve, com um ensino inferior ao seu.", rest: "Por que as famílias não enxergam essa diferença?" },
+        { lead: "O atendimento diz que está sobrecarregado,", rest: "mas você acredita que o time pode se organizar melhor." }
+      ],
+      pillars: [
+        { n: "01", title: "Formação presencial de 5 horas", text: "Para o líder e o time da sua escola, com certificado. Abordagem, rapport, apresentação e qualificação treinados na prática." },
+        { n: "02", title: "Treinamentos online semanais", text: "Encontros ao vivo para o time de matrículas e para a liderança, mantendo todo mundo no mesmo ritmo de evolução." },
+        { n: "03", title: "Monitoramento e Avaliação em tempo real", text: "Cada atendimento e cada matrícula acompanhados e devolvidos ao grupo, com revisão contínua da campanha." },
+        { n: "04", title: "Todas as camadas no mesmo método", text: "Mantenedor, gestores, liderança e time de matrículas, cada um com sua trilha, dentro de um único método." }
+      ],
+      method: [
+        "Rotina de prospecção construída, treinada e cobrada.",
+        "Definição da família que a sua escola quer atender.",
+        "Canais, cadências, roteiros e templates de contato.",
+        "A apresentação da escola virando processo repetível.",
+        "Conexão e confiança construídas antes de falar de preço.",
+        "Fechamento conduzido até a assinatura, não esperado.",
+        "Cada objeção mapeada e contornada com resposta treinada.",
+        "Pós-venda e onboarding orquestrados para reter quem entra."
+      ],
+      tresPilares: [
+        { roman: "I", title: "Estruturação", text: "Formação presencial de 5 horas, com certificado, para o líder e o time. Pente fino no CRM e no funil: processos, papéis e metas definidos antes da campanha começar.", hasNote: false },
+        { roman: "II", title: "Evolução", text: "Treinamentos online semanais ao vivo para o time de matrículas e encontros de liderança. Role-play, materiais, roteiros e gravações liberadas.", hasNote: false },
+        { roman: "III", title: "Monitoramento", text: "Avaliação dos atendimentos em tempo real, devolvida no grupo para atendentes e liderança, com revisão contínua da campanha de matrículas.", hasNote: true }
+      ],
+      programacao: [
+        { hora: "17h00", dur: "30 min", titulo: "Credenciamento e boas-vindas", texto: "Recepção do líder e do time, entrega do material de trabalho e alinhamento do que a escola quer resolver no dia.", topicos: [] },
+        { hora: "17h30", dur: "25 min", titulo: "Campanha de matrículas: da atração à retenção", texto: "Quem já tem campanha rodando revisa e identifica os gargalos. Quem ainda não tem campanha estruturada sai daqui com ela desenhada.", topicos: ["Canais", "Funis", "Metas", "Indicadores", "ICP · definição da família ideal"] },
+        { hora: "17h55", dur: "30 min", titulo: "Canais de atração e prospecção ativa", texto: "Como parar de depender só do tráfego pago. Ativação de até 20 canais e construção da rotina de prospecção com cadências e roteiros de primeiro contato.", topicos: ["Até 20 canais ativados", "Rotina de prospecção", "Cadências e roteiros de contato"] },
+        { hora: "18h25", dur: "50 min", titulo: "Como estruturar o processo comercial", texto: "Da bagunça ao playbook: as cerimônias da rotina comercial, os processos de cada etapa e os 7 passos da matrícula desenhados para a sua escola.", topicos: ["CRM", "Cerimônias e rotina", "Playbook comercial", "Os 7 passos da matrícula"] },
+        { hora: "19h15", dur: "30 min", titulo: "Coffee break especial", texto: "Pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.", topicos: [] },
+        { hora: "19h45", dur: "55 min", titulo: "A importância de uma apresentação eficaz", texto: "Estruturando a sua apresentação em introdução, desenvolvimento e conclusão, com storytelling, rapport e gatilhos mentais aplicados às matrículas.", topicos: ["Introdução, desenvolvimento e conclusão", "Storytelling nas matrículas", "Como fazer um ótimo rapport", "Gatilhos mentais", "Recursos visuais que potencializam a matrícula"] },
+        { hora: "20h40", dur: "35 min", titulo: "Como contornar objeções", texto: "Conexão e confiança construídas antes de falar de preço. Cada objeção mapeada com resposta treinada e o fechamento conduzido até a assinatura.", topicos: ["Mapa de objeções", "Ancoragem de valor", "Condução até a assinatura"] },
+        { hora: "21h15", dur: "15 min", titulo: "Plano de 30 dias e certificados", texto: "O que a sua escola executa nas próximas quatro semanas, escrito antes de sair da sala. Entrega dos certificados.", topicos: [] }
+      ],
+      nome: s.nome,
+      email: s.email,
+      telefone: s.telefone,
+      escola: s.escola,
+      buyButton: this.buyButton(),
+      firstName: (s.nome || "").trim().split(/\s+/)[0],
+      sent: s.status === "success",
+      notSent: s.status !== "success",
+      submitLabel: s.status === "submitting" ? "Enviando…" : "Quero participar →",
+      onNome: (e) => this.setState({ nome: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onTelefone: (e) => this.setState({ telefone: this.maskPhone(e.target.value) }),
+      onEscola: (e) => this.setState({ escola: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ status: "submitting" });
+        setTimeout(() => this.setState({ status: "success" }), 600);
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

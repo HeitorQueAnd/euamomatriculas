@@ -2,7 +2,6 @@ import { Heart, ArrowRight, ArrowDown, MessageCircle, Check } from "lucide-react
 import { ScrollReveal } from "./ScrollReveal";
 import { LeadForm } from "./LeadForm";
 import { PageViewTracker } from "./PageViewTracker";
-import { VinhoTintaBand } from "./VinhoTintaBand";
 import { ORIGINS, type Origin } from "@/lib/origin";
 
 const WHATSAPP =
@@ -12,14 +11,14 @@ const WHATSAPP =
 const PROGRAMACAO = [
   {
     hora: "17h00",
-    dur: "15 min",
+    dur: "30 min",
     titulo: "Credenciamento e boas-vindas",
     texto:
       "Recepção do líder e do time, entrega do material de trabalho e alinhamento do que a escola quer resolver no dia.",
     topicos: [],
   },
   {
-    hora: "17h15",
+    hora: "17h30",
     dur: "25 min",
     titulo: "Campanha de matrículas: da atração à retenção",
     texto:
@@ -27,7 +26,7 @@ const PROGRAMACAO = [
     topicos: ["Canais", "Funis", "Metas", "Indicadores", "ICP · definição da família ideal"],
   },
   {
-    hora: "17h40",
+    hora: "17h55",
     dur: "30 min",
     titulo: "Canais de atração e prospecção ativa",
     texto:
@@ -35,7 +34,7 @@ const PROGRAMACAO = [
     topicos: ["Até 20 canais ativados", "Rotina de prospecção", "Cadências e roteiros de contato"],
   },
   {
-    hora: "18h10",
+    hora: "18h25",
     dur: "50 min",
     titulo: "Como estruturar o processo comercial",
     texto:
@@ -43,7 +42,7 @@ const PROGRAMACAO = [
     topicos: ["CRM", "Cerimônias e rotina", "Playbook comercial", "Os 7 passos da matrícula"],
   },
   {
-    hora: "19h00",
+    hora: "19h45",
     dur: "55 min",
     titulo: "A importância de uma apresentação eficaz",
     texto:
@@ -57,23 +56,15 @@ const PROGRAMACAO = [
     ],
   },
   {
-    hora: "19h55",
-    dur: "15 min",
+    hora: "19h15",
+    dur: "30 min",
     titulo: "Coffee break especial",
     texto:
       "Pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.",
     topicos: [],
   },
   {
-    hora: "20h10",
-    dur: "60 min",
-    titulo: "Vinho e Tinta",
-    texto:
-      "Pintura guiada acompanhada de degustação de vinhos, o vinho é opcional. Um respiro no meio da formação, com foco no cuidado com o time e na união antes do último bloco.",
-    topicos: [],
-  },
-  {
-    hora: "21h10",
+    hora: "20h40",
     dur: "35 min",
     titulo: "Como contornar objeções",
     texto:
@@ -81,7 +72,7 @@ const PROGRAMACAO = [
     topicos: ["Mapa de objeções", "Ancoragem de valor", "Condução até a assinatura"],
   },
   {
-    hora: "21h45",
+    hora: "21h15",
     dur: "15 min",
     titulo: "Plano de 30 dias e certificados",
     texto:
@@ -131,7 +122,7 @@ const PILLARS = [
   {
     n: "01",
     title: "Formação presencial de 5 horas",
-    text: "Para o líder e o time, na sua escola e com certificado. Abordagem, rapport, apresentação e qualificação treinados na prática.",
+    text: "Para o líder e o time da sua escola, com certificado. Abordagem, rapport, apresentação e qualificação treinados na prática.",
   },
   {
     n: "02",
@@ -185,9 +176,9 @@ const TRES_PILARES = [
 ];
 
 const FOTOS = [
-  { src: "/fotos/evento.jpg", alt: "Time reunido na experiência de pintura guiada" },
-  { src: "/fotos/vinho-tinta.jpg", alt: "Tela, taça e degustação na experiência Vinho e Tinta" },
-  { src: "/fotos/atelie.jpg", alt: "Cavalete e material de pintura preparados para o time" },
+  { src: "/fotos/tinto-tinta-apresentacao.jpg", alt: "Apresentação da formação Tinto e Tinta", position: "object-[center_30%]" },
+  { src: "/fotos/tinto-tinta-jantar.jpg", alt: "Jantar da formação Tinto e Tinta", position: "object-[60%_center]" },
+  { src: "/fotos/tela-palmeira.jpg", alt: "Tela da experiência Tinto e Tinta", position: "object-[center_35%]" },
 ];
 
 const CITIES = ["Brasília", "São Paulo", "Goiânia"];
@@ -238,9 +229,9 @@ export function Landing({ origin }: { origin: Origin }) {
             </p>
 
             <h1 className="rise d2 font-display text-[2.6rem] font-medium leading-[1.06] text-text-strong sm:text-[3.4rem] lg:text-[3.9rem]">
-              A maior{" "}
+              O maior{" "}
               <span className="relative inline-block">
-                formação
+                movimento
                 <span
                   aria-hidden
                   className="absolute -bottom-1 left-0 h-[0.14em] w-full origin-left rounded-full bg-red-500"
@@ -253,7 +244,7 @@ export function Landing({ origin }: { origin: Origin }) {
             <p className="rise d3 mt-8 max-w-[52ch] text-[17px] leading-relaxed text-text-muted">
               Em vez de dicas e hacks, ensinamos processo, gestão e técnica de vendas.
               O líder e o time de atendimento da sua escola treinam juntos, na prática,
-              dentro de um único método.
+              dentro de um único método: <strong className="font-semibold text-text-strong">formação presencial</strong>, <strong className="font-semibold text-text-strong">formação online para o time</strong> e acompanhamento com a <strong className="font-semibold text-red-400">IA Clara</strong>.
             </p>
 
             <div className="rise d4 mt-9 flex flex-wrap items-center gap-5">
@@ -274,51 +265,59 @@ export function Landing({ origin }: { origin: Origin }) {
             </div>
           </div>
 
-          <div className="rise d3 hidden lg:block">
-            <div className="relative overflow-hidden rounded-2xl border border-white/[0.08]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/fotos/evento.jpg"
-                alt="Time em formação na experiência da Academia Claraval"
-                className="h-[560px] w-full object-cover"
+          <div className="rise d3 flex justify-center">
+            <div className="relative aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[20px] border border-white/10 bg-ink-900 shadow-[0_30px_70px_-30px_rgba(188,38,73,0.45)]">
+              <video
+                src="/videos/lp-matriculas.mp4"
+                poster="/fotos/formacao-sala.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-label="Vídeo da formação Eu Amo Matrículas"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent p-6">
-                <p className="font-display text-[1.15rem] leading-snug text-text-strong">
-                  Um time que treina junto matricula junto.
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= CLARAVAL COM VINHO TINTA ================= */}
-      <VinhoTintaBand />
-
       {/* ================= PARA QUEM E ================= */}
-      <section className="border-y border-white/[0.06] px-6 py-28">
+      <section className="border-y border-ink-900/10 bg-paper-50 px-6 py-28 text-ink-900">
+        <div className="marquee-mask mb-24 -mt-28 border-b border-ink-900/10 py-[30px]">
+          <div className="marquee flex w-max">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex flex-shrink-0 items-center" aria-hidden={copy === 1}>
+                {["Colégio Bambini", "Heavenly", "Colégio Piaget", "Colégio Mult Integral", "OASIS", "Colégio DOM", "Colégio Harmonia", "IPESSP", "Colégio Desafio", "CSFX", "Colégio São Francisco Xavier", "Marista", "Objetivo", "Escola SEB"].map((name) => (
+                  <span key={name} className="whitespace-nowrap border-r border-ink-900/10 px-[34px] font-display text-[1.45rem] font-medium text-ink-900/55">{name}</span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="mx-auto grid max-w-6xl items-start gap-16 lg:grid-cols-[0.82fr_1.18fr]">
           <ScrollReveal className="lg:sticky lg:top-32">
-            <p className="mb-5 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+            <p className="mb-5 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
               <span className="inline-block h-px w-8 bg-red-500" />
               Para quem é
             </p>
-            <h2 className="max-w-[17ch] font-display text-[2rem] font-semibold leading-[1.1] text-text-strong sm:text-[2.6rem]">
+            <h2 className="max-w-[17ch] font-display text-[2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.6rem]">
               Se você se identifica com essa situação:
               <br />
-              <span className="text-red-400">o Eu Amo Matrículas foi feito para você</span>
+              <span className="text-red-600">o Eu Amo Matrículas foi feito para você</span>
             </h2>
           </ScrollReveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
             {PAINS.map((p, i) => (
               <ScrollReveal key={p.lead} delay={i * 60} className="h-full">
-                <div className="flex h-full gap-3.5 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-[22px] transition-colors hover:border-red-500/40 hover:bg-red-600/[0.06]">
-                  <span className="flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-[13px] font-bold text-paper-50">
+                <div className="flex h-full gap-3.5 rounded-2xl border border-ink-900/[0.12] bg-red-600/[0.04] p-[22px] transition-colors hover:border-red-500/40 hover:bg-red-600/[0.06]">
+                  <span className="flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full bg-red-600 text-[13px] font-bold text-paper-50">
                     <Check size={14} strokeWidth={3} />
                   </span>
-                  <p className="text-[15px] leading-relaxed text-text-muted">
-                    <strong className="font-bold text-text-strong">{p.lead}</strong> {p.rest}
+                  <p className="text-[15px] leading-relaxed text-ink-900/70">
+                    <strong className="font-bold text-ink-900">{p.lead}</strong> {p.rest}
                   </p>
                 </div>
               </ScrollReveal>
@@ -330,17 +329,17 @@ export function Landing({ origin }: { origin: Origin }) {
       {/* ================= O QUE E (fundo claro) ================= */}
       <section
         id="formacao"
-        className="border-y border-white/[0.06] bg-paper-50 px-6 py-28 text-ink-900"
+        className="border-y border-white/[0.06] bg-ink-950 px-6 py-28 text-text-strong"
       >
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
               O que é o Eu Amo Matrículas
             </p>
-            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.8rem]">
+            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-text-strong sm:text-[2.8rem]">
               Um movimento para trazer resultado à sua campanha de matrículas
             </h2>
-            <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed text-ink-900/70">
+            <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed text-text-muted">
               O conhecimento sai da teoria e vira execução na ponta. A escola inteira
               entra no mesmo método, do mantenedor ao time de matrículas, e a área
               comercial passa a operar em desenvolvimento contínuo.
@@ -350,14 +349,14 @@ export function Landing({ origin }: { origin: Origin }) {
           <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((p, i) => (
               <ScrollReveal key={p.n} delay={i * 80} className="h-full">
-                <div className="flex h-full flex-col border-t-2 border-red-600/50 pt-6">
-                  <span className="font-display text-[2.6rem] font-semibold leading-none tracking-[-0.03em] text-red-600">
+                <div className="flex h-full flex-col border-t-2 border-red-500/50 pt-6">
+                  <span className="font-display text-[2.6rem] font-semibold leading-none tracking-[-0.03em] text-red-400">
                     {p.n}
                   </span>
-                  <h3 className="mt-5 font-display text-[1.3rem] font-semibold leading-tight text-ink-900">
+                  <h3 className="mt-5 font-display text-[1.3rem] font-semibold leading-tight text-text-strong">
                     {p.title}
                   </h3>
-                  <p className="mt-3.5 text-[14.5px] leading-relaxed text-ink-900/70">{p.text}</p>
+                  <p className="mt-3.5 text-[14.5px] leading-relaxed text-text-muted">{p.text}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -366,39 +365,45 @@ export function Landing({ origin }: { origin: Origin }) {
       </section>
 
       {/* ================= O QUE VOCE RECEBE E CONSTROI ================= */}
-      <section className="px-6 py-28">
+      <section className="bg-paper-50 px-6 py-28 text-ink-900">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <h3 className="mx-auto mb-12 max-w-[24ch] text-center font-display text-[1.7rem] font-semibold leading-[1.15] text-text-strong sm:text-[2.2rem]">
+            <h3 className="mx-auto mb-12 max-w-[24ch] text-center font-display text-[1.7rem] font-semibold leading-[1.15] text-ink-900 sm:text-[2.2rem]">
               O que você irá receber e construir conosco
             </h3>
           </ScrollReveal>
 
-          <div className="grid gap-x-10 gap-y-6 md:grid-cols-2">
+          <div className="grid gap-x-12 gap-y-6 md:grid-cols-[minmax(320px,1fr)_minmax(320px,1fr)]">
+            <div className="hidden overflow-hidden rounded-2xl md:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/fotos/workbook.jpg" alt="Workbook da formação Eu Amo Matrículas" className="h-[560px] w-full object-cover object-[center_40%]" />
+            </div>
+            <div className="flex flex-col gap-[22px]">
             {METHOD.map((m, i) => (
               <ScrollReveal key={m} delay={i * 60}>
-                <div className="flex items-start gap-4 border-b border-white/[0.06] pb-6">
-                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-red-500/30 text-red-400">
+                <div className="flex items-start gap-4 border-b border-ink-900/[0.12] pb-6">
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-red-600/30 text-red-600">
                     <Check size={14} strokeWidth={2.5} />
                   </span>
-                  <p className="text-[15px] leading-relaxed text-text-muted">{m}</p>
+                  <p className="text-[15px] leading-relaxed text-ink-900/70">{m}</p>
                 </div>
               </ScrollReveal>
             ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ================= OS 3 PILARES (fundo claro) ================= */}
-      <section className="border-y border-white/[0.06] bg-paper-50 px-6 py-28 text-ink-900">
+      <section className="border-y border-white/[0.06] bg-ink-950 px-6 py-28 text-text-strong">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <p className="mb-6 flex items-center gap-3.5 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
               <span className="inline-block h-0.5 w-[30px] bg-red-600" />
               Como a evolução acontece
             </p>
-            <h2 className="mb-14 font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[3rem]">
-              Os 3 pilares do <span className="text-red-600">Eu Amo Matrículas.</span>
+            <h2 className="mb-14 font-display text-[2.2rem] font-semibold leading-[1.1] text-text-strong sm:text-[3rem]">
+              Os 3 pilares do <span className="text-red-400">Eu Amo Matrículas.</span>
             </h2>
           </ScrollReveal>
 
@@ -449,7 +454,7 @@ export function Landing({ origin }: { origin: Origin }) {
       </section>
 
       {/* ================= PROGRAMACAO ================= */}
-      <section className="px-6 py-28">
+      <section className="bg-paper-50 px-6 py-28 text-ink-900">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <p className="mb-4 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
@@ -457,7 +462,7 @@ export function Landing({ origin }: { origin: Origin }) {
               Programação da formação presencial
             </p>
             <h2 className="max-w-[26ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.8rem]">
-              Cinco horas de formação comercial, com experiência de Vinho e Tinta
+              Formação presencial de 5 horas com certificado
             </h2>
             <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-text-muted">
               Cada bloco combina conteúdo, construção e prática guiada. O líder e o time
@@ -506,7 +511,7 @@ export function Landing({ origin }: { origin: Origin }) {
       </section>
 
       {/* ================= QUOTE ================= */}
-      <section className="px-6 py-24">
+      <section className="bg-paper-50 px-6 py-24 text-ink-900">
         <div className="mx-auto max-w-4xl text-center">
           <ScrollReveal>
             <span className="font-display text-[5rem] leading-none text-red-500/70">&ldquo;</span>
@@ -524,12 +529,12 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
-      {/* ================= VINHO E TINTA (fotos, fundo claro) ================= */}
-      <section className="border-y border-white/[0.06] bg-paper-50 px-6 py-24 text-ink-900">
+      {/* ================= TINTO E TINTA (fotos, fundo escuro) ================= */}
+      <section className="border-y border-white/[0.06] bg-ink-950 px-6 py-24 text-text-strong">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
-              A experiência Vinho e Tinta
+              A experiência Tinto e Tinta
             </p>
             <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.7rem]">
               O cuidado com o time também faz parte do método
@@ -549,7 +554,7 @@ export function Landing({ origin }: { origin: Origin }) {
                   <img
                     src={f.src}
                     alt={f.alt}
-                    className="h-80 w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                    className={`h-[420px] w-full object-cover transition-transform duration-500 hover:scale-[1.03] ${f.position}`}
                   />
                 </div>
               </ScrollReveal>
@@ -559,7 +564,7 @@ export function Landing({ origin }: { origin: Origin }) {
       </section>
 
       {/* ================= FORM ================= */}
-      <section id="formulario" className="border-t border-white/[0.06] px-6 py-30">
+      <section id="formulario" className="border-t border-ink-900/10 bg-paper-50 px-6 py-30 text-ink-900">
         <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1fr_1.05fr]">
           <ScrollReveal className="lg:sticky lg:top-32">
             <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
@@ -573,6 +578,15 @@ export function Landing({ origin }: { origin: Origin }) {
               da sua escola entrar na formação. Vagas limitadas por turma.
             </p>
 
+            <div className="mt-7 max-w-[460px] rounded-2xl bg-ink-900 px-7 py-[26px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-red-400">Investimento</p>
+              <p className="mt-2 flex items-baseline gap-2 font-display">
+                <span className="text-[1.1rem] text-text-muted">R$</span>
+                <span className="text-[clamp(2.6rem,5vw,3.2rem)] font-semibold text-text-strong">947,00</span>
+                <span className="text-[1.1rem] text-text-muted">/mês</span>
+              </p>
+            </div>
+
             <ul className="mt-9 space-y-4">
               {BENEFITS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[15px] text-text-muted">
@@ -584,15 +598,15 @@ export function Landing({ origin }: { origin: Origin }) {
 
             <div className="mt-8 border-t border-white/[0.08] pt-7">
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-text-faint">
-                Formação presencial com certificado
+              Próximas turmas presenciais · com certificado
               </p>
               <div className="flex flex-wrap gap-2.5">
                 {CITIES.map((c) => (
                   <span
                     key={c}
-                    className="rounded-full border border-white/[0.12] px-[18px] py-[9px] text-[14px] font-medium text-text-strong"
+                    className="rounded-full border border-red-600/35 px-[18px] py-[9px] text-[14px] font-medium text-ink-900"
                   >
-                    {c}
+                    {c === "Brasília" ? <><strong className="font-bold text-red-600">Brasília</strong> <span>27 de outubro</span></> : c === "São Paulo" ? <><strong className="font-bold text-red-600">São Paulo</strong> <span>04 de novembro</span></> : c}
                   </span>
                 ))}
                 <a

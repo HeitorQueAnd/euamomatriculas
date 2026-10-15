@@ -1,10 +1,24 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Script from "next/script";
 import { Send, Check } from "lucide-react";
 import { ORIGINS, type Origin } from "@/lib/origin";
 
 type Status = "idle" | "submitting" | "success";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "stripe-buy-button": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        "buy-button-id": string;
+        "publishable-key": string;
+        "customer-email": string;
+        "client-reference-id": string;
+      };
+    }
+  }
+}
 
 /**
  * Form de captura, mesmos campos da root do claraval-landing:
@@ -63,17 +77,34 @@ export function LeadForm({ origin }: { origin: Origin }) {
     setStatus("success");
   }
 
+  function sanitizeReference(value: string) {
+    return value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^A-Za-z0-9_-]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 200);
+  }
+
   if (status === "success") {
+    const firstName = nome.trim().split(/\s+/)[0] || "você";
+    const clientReferenceId = sanitizeReference(`${nome}__${escola}__${telefone.replace(/\D/g, "")}`);
     return (
-      <div className="rounded-3xl border border-paper-200 bg-paper-50 p-10 text-center shadow-[var(--shadow-card)]">
+      <div className="rounded-3xl border border-paper-200 bg-white p-10 text-center shadow-[0_24px_60px_-32px_rgba(20,13,15,0.35)]">
+        <Script src="https://js.stripe.com/v3/buy-button.js" strategy="afterInteractive" />
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-500 text-paper-50">
           <Check size={30} strokeWidth={2.5} />
         </div>
-        <h3 className="mt-6 font-display text-2xl text-ink-900">Cadastro enviado</h3>
-        <p className="mx-auto mt-3 max-w-[38ch] text-[15px] leading-relaxed text-ink-700/70">
-          Obrigado pelo interesse. Nossa equipe entra em contato em até 24 horas
-          úteis para agendar a experiência na sua escola.
-        </p>
+        <h3 className="mt-6 font-display text-2xl text-ink-900">Cadastro enviado, {firstName}</h3>
+        <p className="mx-auto mt-3 max-w-[38ch] text-[15px] leading-relaxed text-ink-700/70">Finalize sua inscrição abaixo com o pagamento seguro.</p>
+        <div className="mt-7 flex justify-center">
+          <stripe-buy-button
+            buy-button-id="buy_btn_1UQoM6CjaH5UL316h9vKpMsX"
+            publishable-key="pk_live_51ULTWcCjaH5UL316EBUjzv0KImhjpT44Ag6hgMqsMzTq9g51udKeAbdPpg0iuIfVhW19nAkJy1SXrAk9nPW5A0Et00xcjS6MCA"
+            customer-email={email}
+            client-reference-id={clientReferenceId}
+          />
+        </div>
       </div>
     );
   }
@@ -86,7 +117,7 @@ export function LeadForm({ origin }: { origin: Origin }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-paper-200 bg-paper-50 p-7 shadow-[var(--shadow-card)] sm:p-9"
+      className="rounded-3xl border border-[#e0d5c6] bg-white p-7 shadow-[0_24px_60px_-32px_rgba(20,13,15,0.35)] sm:p-9"
     >
       {/* RD Station: identifica a origem da conversao */}
       <input type="hidden" name="conversion_identifier" value={conversionIdentifier} />

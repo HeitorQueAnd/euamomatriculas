@@ -18,13 +18,13 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.euamomatriculas.com.br"),
-  title: "Eu Amo Matrículas | Team building com degustação de vinho",
+  title: "Eu Amo Matrículas | O maior movimento de matrículas do Brasil",
   description:
-    "O team building escolhido por Google, Netflix, Nubank e Natura, agora aplicado aos times de matrículas e retenção da sua escola. Uma iniciativa da Academia Claraval.",
+    "Processo, gestão e técnica de vendas para líderes e times de atendimento escolar. Uma iniciativa da Academia Claraval.",
   openGraph: {
-    title: "Eu Amo Matrículas | Team building com degustação de vinho",
+    title: "Eu Amo Matrículas | O maior movimento de matrículas do Brasil",
     description:
-      "O método de integração das grandes empresas aplicado aos times de matrículas e retenção da sua escola.",
+      "Formação presencial, treinamento online e acompanhamento com a IA Clara para times de matrículas.",
     type: "website",
     locale: "pt_BR",
     siteName: "Eu Amo Matriculas",
