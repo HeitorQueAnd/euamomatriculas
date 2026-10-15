@@ -333,7 +333,7 @@ export function Landing({ origin }: { origin: Origin }) {
       >
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
               O que é o Eu Amo Matrículas
             </p>
             <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-text-strong sm:text-[2.8rem]">
@@ -394,12 +394,12 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
-      {/* ================= OS 3 PILARES (fundo claro) ================= */}
+      {/* ================= OS 3 PILARES (fundo escuro) ================= */}
       <section className="border-y border-white/[0.06] bg-ink-950 px-6 py-28 text-text-strong">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <p className="mb-6 flex items-center gap-3.5 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
-              <span className="inline-block h-0.5 w-[30px] bg-red-600" />
+            <p className="mb-6 flex items-center gap-3.5 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+              <span className="inline-block h-0.5 w-[30px] bg-red-500" />
               Como a evolução acontece
             </p>
             <h2 className="mb-14 font-display text-[2.2rem] font-semibold leading-[1.1] text-text-strong sm:text-[3rem]">
@@ -410,17 +410,17 @@ export function Landing({ origin }: { origin: Origin }) {
           <div className="grid gap-6 md:grid-cols-3">
             {TRES_PILARES.map((p, i) => (
               <ScrollReveal key={p.roman} delay={i * 90} className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border border-ink-900/[0.12] bg-red-600/[0.04] px-[30px] pt-[30px] pb-[34px]">
-                  <span className="font-display text-[1.15rem] font-semibold tracking-[0.12em] text-red-600">
+                <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.025] px-[30px] pt-[30px] pb-[34px]">
+                  <span className="font-display text-[1.15rem] font-semibold tracking-[0.12em] text-red-400">
                     {p.roman}
                   </span>
-                  <h3 className="mt-5 font-display text-[1.2rem] font-semibold uppercase tracking-[0.02em] text-ink-900">
+                  <h3 className="mt-5 font-display text-[1.2rem] font-semibold uppercase tracking-[0.02em] text-text-strong">
                     {p.title}
                   </h3>
-                  <p className="mt-4.5 text-[14.5px] leading-relaxed text-ink-900/70">{p.text}</p>
+                  <p className="mt-4.5 text-[14.5px] leading-relaxed text-text-muted">{p.text}</p>
                   {p.hasNote && (
-                    <p className="mt-4.5 text-[14.5px] leading-relaxed text-ink-900/70">
-                      Feito pela <strong className="font-semibold text-red-600">IA Clara</strong> e
+                    <p className="mt-4.5 text-[14.5px] leading-relaxed text-text-muted">
+                      Feito pela <strong className="font-semibold text-red-400">IA Clara</strong> e
                       pelos analistas da Claraval.
                     </p>
                   )}
@@ -430,19 +430,19 @@ export function Landing({ origin }: { origin: Origin }) {
           </div>
 
           <ScrollReveal delay={120}>
-            <div className="mt-6 grid items-center gap-14 rounded-2xl border border-ink-900/[0.12] bg-red-600/[0.04] px-10 py-11 lg:grid-cols-[0.9fr_2fr]">
+            <div className="mt-6 grid items-center gap-14 rounded-2xl border border-white/[0.08] bg-white/[0.025] px-10 py-11 lg:grid-cols-[0.9fr_2fr]">
               <div className="text-center">
-                <p className="font-display text-[3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-red-600 sm:text-[4.2rem]">
+                <p className="font-display text-[3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-red-400 sm:text-[4.2rem]">
                   <span className="align-[0.42em] text-[0.5em]">+</span>70
                 </p>
-                <p className="mt-2.5 font-display text-[1.15rem] font-semibold uppercase tracking-[0.08em] text-ink-900">
+                <p className="mt-2.5 font-display text-[1.15rem] font-semibold uppercase tracking-[0.08em] text-text-strong">
                   Estímulos
                 </p>
-                <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.22em] text-ink-900/55">
+                <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-faint">
                   Ao longo dos 3 meses
                 </p>
               </div>
-              <p className="text-[16px] leading-[1.75] text-ink-900/70">
+              <p className="text-[16px] leading-[1.75] text-text-muted">
                 Mantenedor, gestores, lideranças e time de matrículas no mesmo ritmo de
                 evolução, cada camada com sua trilha, todas dentro do mesmo método. O
                 resultado é uma área comercial que para de oscilar em picos de animação e
@@ -457,14 +457,14 @@ export function Landing({ origin }: { origin: Origin }) {
       <section className="bg-paper-50 px-6 py-28 text-ink-900">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <p className="mb-4 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
-              <span className="inline-block h-0.5 w-[30px] bg-red-500" />
+            <p className="mb-4 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
+              <span className="inline-block h-0.5 w-[30px] bg-red-600" />
               Programação da formação presencial
             </p>
-            <h2 className="max-w-[26ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.8rem]">
+            <h2 className="max-w-[26ch] font-display text-[2.2rem] font-medium leading-[1.1] text-ink-900 sm:text-[2.8rem]">
               Formação presencial de 5 horas com certificado
             </h2>
-            <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-text-muted">
+            <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-ink-900/70">
               Cada bloco combina conteúdo, construção e prática guiada. O líder e o time
               saem com processo desenhado, roteiros escritos e a primeira rodada de treino
               feita.
@@ -474,20 +474,20 @@ export function Landing({ origin }: { origin: Origin }) {
           <div className="mt-14 flex flex-col">
             {PROGRAMACAO.map((b, i) => (
               <ScrollReveal key={b.hora} delay={i * 50}>
-                <div className="grid gap-8 border-t border-white/[0.08] py-[26px] sm:grid-cols-[150px_1fr]">
+                <div className="grid gap-8 border-t border-ink-900/[0.12] py-[26px] sm:grid-cols-[150px_1fr]">
                   <div>
-                    <p className="font-display text-[1.3rem] font-semibold tracking-[-0.01em] text-red-400">
+                    <p className="font-display text-[1.3rem] font-semibold tracking-[-0.01em] text-red-600">
                       {b.hora}
                     </p>
-                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-faint">
+                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-900/55">
                       {b.dur}
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display text-[1.35rem] font-medium leading-tight text-text-strong">
+                    <h3 className="font-display text-[1.35rem] font-medium leading-tight text-ink-900">
                       {b.titulo}
                     </h3>
-                    <p className="mt-2.5 max-w-[74ch] text-[15px] leading-relaxed text-text-muted">
+                    <p className="mt-2.5 max-w-[74ch] text-[15px] leading-relaxed text-ink-900/70">
                       {b.texto}
                     </p>
                     {b.topicos.length > 0 && (
@@ -495,7 +495,7 @@ export function Landing({ origin }: { origin: Origin }) {
                         {b.topicos.map((t) => (
                           <span
                             key={t}
-                            className="rounded-full border border-white/[0.12] bg-red-600/[0.08] px-[15px] py-[7px] text-[13px] font-medium text-paper-200"
+                            className="rounded-full border border-ink-900/[0.12] bg-red-600/[0.08] px-[15px] py-[7px] text-[13px] font-medium text-red-700"
                           >
                             {t}
                           </span>
@@ -515,13 +515,13 @@ export function Landing({ origin }: { origin: Origin }) {
         <div className="mx-auto max-w-4xl text-center">
           <ScrollReveal>
             <span className="font-display text-[5rem] leading-none text-red-500/70">&ldquo;</span>
-            <blockquote className="-mt-6 font-display text-[1.7rem] font-medium italic leading-snug text-text-strong sm:text-[2.1rem]">
+            <blockquote className="-mt-6 font-display text-[1.7rem] font-medium italic leading-snug text-ink-900 sm:text-[2.1rem]">
               A área comercial para de oscilar em picos de animação e passa a operar em
               desenvolvimento contínuo.
             </blockquote>
             <div className="mt-9 flex flex-col items-center gap-1">
-              <p className="text-[15px] font-semibold text-text-strong">Fernando Zago</p>
-              <p className="text-[13px] uppercase tracking-[0.2em] text-text-faint">
+              <p className="text-[15px] font-semibold text-ink-900">Fernando Zago</p>
+              <p className="text-[13px] uppercase tracking-[0.2em] text-ink-900/55">
                 CEO da Academia Claraval
               </p>
             </div>
@@ -533,13 +533,13 @@ export function Landing({ origin }: { origin: Origin }) {
       <section className="border-y border-white/[0.06] bg-ink-950 px-6 py-24 text-text-strong">
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
               A experiência Tinto e Tinta
             </p>
-            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-ink-900 sm:text-[2.7rem]">
+            <h2 className="max-w-[24ch] font-display text-[2.2rem] font-semibold leading-[1.1] text-text-strong sm:text-[2.7rem]">
               O cuidado com o time também faz parte do método
             </h2>
-            <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-ink-900/70">
+            <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-text-muted">
               As formações presenciais terminam com uma pintura guiada acompanhada de
               degustação de vinhos, o vinho é opcional. Um momento de saúde mental,
               descompressão e união, porque um time cuidado é um time que fica.
@@ -549,7 +549,7 @@ export function Landing({ origin }: { origin: Origin }) {
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {FOTOS.map((f, i) => (
               <ScrollReveal key={f.src} delay={i * 100}>
-                <div className="overflow-hidden rounded-2xl border border-ink-900/[0.12]">
+                <div className="overflow-hidden rounded-2xl border border-white/[0.08]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={f.src}
@@ -567,13 +567,13 @@ export function Landing({ origin }: { origin: Origin }) {
       <section id="formulario" className="border-t border-ink-900/10 bg-paper-50 px-6 py-30 text-ink-900">
         <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1fr_1.05fr]">
           <ScrollReveal className="lg:sticky lg:top-32">
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
               Entre na formação
             </p>
-            <h2 className="max-w-[18ch] font-display text-[2.2rem] font-medium leading-[1.1] text-text-strong sm:text-[2.7rem]">
+            <h2 className="max-w-[18ch] font-display text-[2.2rem] font-medium leading-[1.1] text-ink-900 sm:text-[2.7rem]">
               Treine o seu time na Academia Claraval
             </h2>
-            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-muted">
+            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink-900/70">
               Deixe seu contato e nossa equipe fala com você para agendar a melhor data
               da sua escola entrar na formação. Vagas limitadas por turma.
             </p>
@@ -589,15 +589,15 @@ export function Landing({ origin }: { origin: Origin }) {
 
             <ul className="mt-9 space-y-4">
               {BENEFITS.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] text-text-muted">
+                <li key={item} className="flex items-start gap-3 text-[15px] text-ink-900/70">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 border-t border-white/[0.08] pt-7">
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-text-faint">
+            <div className="mt-8 border-t border-ink-900/[0.12] pt-7">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-900/55">
               Próximas turmas presenciais · com certificado
               </p>
               <div className="flex flex-wrap gap-2.5">
@@ -613,7 +613,7 @@ export function Landing({ origin }: { origin: Origin }) {
                   href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-red-500/55 bg-red-500/[0.12] px-[18px] py-[9px] text-[14px] font-semibold text-text-strong transition-colors hover:border-red-500 hover:bg-red-500"
+                  className="rounded-full border border-red-600/55 bg-red-600/[0.12] px-[18px] py-[9px] text-[14px] font-semibold text-ink-900 transition-colors hover:border-red-600 hover:bg-red-600 hover:text-paper-50"
                 >
                   Leve para a sua cidade →
                 </a>
