@@ -7,10 +7,10 @@ import { ORIGINS, type Origin } from "@/lib/origin";
 
 type Status = "idle" | "submitting" | "success";
 
-declare global {
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
-      "stripe-buy-button": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+      "stripe-buy-button": {
         "buy-button-id": string;
         "publishable-key": string;
         "customer-email": string;
