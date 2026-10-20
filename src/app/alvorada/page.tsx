@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LandingIsaac } from "@/components/LandingIsaac";
+import { Landing } from "@/components/Landing";
 
 export const metadata: Metadata = {
   title: "Convite Alvorada Distribuidora — Eu Amo Matrículas",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AlvoradaPage() {
   return (
     <main>
-      <LandingIsaac origin="alvorada" />
+      <Landing origin="alvorada" hideTinto />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Heart, ArrowRight, ArrowDown, MessageCircle, Check } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { LeadForm } from "./LeadForm";
@@ -188,7 +189,47 @@ const BENEFITS = [
   "Acompanhamento dos atendimentos em tempo real",
 ];
 
-export function Landing({ origin }: { origin: Origin }) {
+function AlvoradaHero() {
+  return (
+    <div>
+      <p className="rise d1 mb-7 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
+        <span className="inline-block h-px w-8 bg-red-500" />
+        Convite especial Alvorada Distribuidora
+      </p>
+
+      <h1 className="rise d2 font-display text-[2.6rem] font-medium leading-[1.06] text-text-strong sm:text-[3.4rem] lg:text-[3.9rem]">
+        A maior <span className="relative inline-block">formação<span aria-hidden className="absolute -bottom-1 left-0 h-[0.14em] w-full origin-left rounded-full bg-red-500" style={{ animation: "drawLine 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s backwards" }} /></span> de matrículas do Brasil
+      </h1>
+
+      <p className="rise d3 mt-8 max-w-[58ch] text-[17px] leading-relaxed text-text-muted">
+        A Alvorada Distribuidora e a Claraval têm um convite especial para trazer resultado à sua campanha de matrículas. Treinar o seu time para ampliar a atração e conversão de matrículas.
+      </p>
+
+      <div className="rise d3 mt-7 flex flex-wrap gap-x-10 gap-y-3.5">
+        <div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Data</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">27 de outubro</p></div>
+        <div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Período</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">17h às 22h</p></div>
+        <div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Local</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">Brasília, Distrito Federal</p></div>
+      </div>
+
+      <div className="rise d4 mt-7 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.045] px-[30px] py-[26px]">
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5">
+          <div className="flex flex-wrap items-baseline gap-3.5"><span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-text-faint">Investimento</span><span className="font-display text-[1.6rem] text-text-faint line-through">R$ 3.000,00</span></div>
+          <div className="flex flex-col items-end gap-1.5"><span className="font-display text-[1rem] text-paper-200">Convidado</span><Image src="/logos/alvorada.png" alt="Alvorada Distribuidora" width={1600} height={459} className="h-[48px] w-[178px] rounded-md object-cover" /></div>
+        </div>
+        <p className="text-[15.5px] leading-relaxed text-text-muted">Para o líder, acompanhado de um membro do time.</p>
+      </div>
+
+      <p className="rise d4 mt-4 max-w-[52ch] text-[14px] leading-relaxed text-text-faint">Agende uma reunião com o consultor da Alvorada Distribuidora para alinhar tudo e confirmar a participação do seu time na formação presencial.</p>
+
+      <div className="rise d5 mt-8 flex flex-wrap items-center gap-5">
+        <a href="#formulario" className="group inline-flex items-center gap-2.5 rounded-full bg-red-600 px-7 py-3.5 text-[15px] font-semibold text-paper-50 shadow-[var(--shadow-red)] transition-all duration-200 hover:bg-red-500">Quero agendar a reunião<ArrowRight size={17} /></a>
+        <a href="#formacao" className="group inline-flex items-center gap-2 text-[15px] font-medium text-text-muted transition-colors hover:text-text-strong">Conheça a formação<ArrowDown size={16} /></a>
+      </div>
+    </div>
+  );
+}
+
+export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTinto?: boolean }) {
   return (
     <div className="relative">
       {/* Log de acesso: registra a visita da rota em /api/track. */}
@@ -222,7 +263,7 @@ export function Landing({ origin }: { origin: Origin }) {
           style={{ background: "var(--red-600)" }}
         />
         <div className="mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
+          {origin === "alvorada" ? <AlvoradaHero /> : <div>
             <p className="rise d1 mb-7 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
               <span className="inline-block h-px w-8 bg-red-500" />
               Academia Claraval
@@ -263,7 +304,7 @@ export function Landing({ origin }: { origin: Origin }) {
                 <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
               </a>
             </div>
-          </div>
+          </div>}
 
           <div className="rise d3 flex justify-center">
             <div className="relative aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-[20px] border border-white/10 bg-ink-900 shadow-[0_30px_70px_-30px_rgba(188,38,73,0.45)]">
@@ -529,6 +570,8 @@ export function Landing({ origin }: { origin: Origin }) {
         </div>
       </section>
 
+      {!hideTinto && (
+      <>
       {/* ================= TINTO E TINTA (fotos, fundo escuro) ================= */}
       <section className="border-y border-white/[0.06] bg-ink-950 px-6 py-24 text-text-strong">
         <div className="mx-auto max-w-6xl">
@@ -562,6 +605,8 @@ export function Landing({ origin }: { origin: Origin }) {
           </div>
         </div>
       </section>
+      </>
+      )}
 
       {/* ================= FORM ================= */}
       <section id="formulario" className="border-t border-ink-900/10 bg-paper-50 px-6 py-30 text-ink-900">
