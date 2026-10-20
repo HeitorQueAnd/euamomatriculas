@@ -16,12 +16,13 @@
  *  /palestra  -> QR Code / link divulgado nas palestras e eventos
  *  /vlupt     -> convite da parceria VLUPT
  *  /isaac     -> convite da parceria ISAAC
+ *  /alvorada  -> convite da parceria Alvorada Distribuidora
  *
  * Para criar uma rota nova: adicione a origem aqui e crie o
  * `src/app/<rota>/page.tsx` renderizando <Landing origin="..." />. O tracking
  * e o /admin passam a contar a rota automaticamente.
  */
-export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac";
+export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac" | "alvorada";
 
 export interface OriginConfig {
   /** Rota da landing que usa esta origem — tambem e a chave no log de acesso. */
@@ -57,6 +58,11 @@ export const ORIGINS: Record<Origin, OriginConfig> = {
     path: "/isaac",
     conversionIdentifier: "euamomatriculas-isaac",
     label: "Eu Amo Matriculas - Convite ISAAC",
+  },
+  alvorada: {
+    path: "/alvorada",
+    conversionIdentifier: "euamomatriculas-alvorada",
+    label: "Eu Amo Matriculas - Convite Alvorada Distribuidora",
   },
 };
 

@@ -7,7 +7,7 @@ import { VinhoTintaBand } from "./VinhoTintaBand";
 import { ORIGINS, type Origin } from "@/lib/origin";
 
 const WHATSAPP =
-  "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20confirmar%20a%20reuni%C3%A3o%20do%20convite%20ISAAC%20para%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas.";
+  "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20confirmar%20a%20reuni%C3%A3o%20do%20convite%20Alvorada%20Distribuidora%20para%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas.";
 
 /** Dados do encontro — o único lugar a editar quando a turma mudar. */
 const EVENTO = [
@@ -193,6 +193,9 @@ const TRES_PILARES = [
 ];
 
 export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
+  const isAlvorada = origin === "alvorada";
+  const partnerName = isAlvorada ? "Alvorada Distribuidora" : "ISAAC";
+  const partnerLogo = isAlvorada ? "/logos/alvorada.png" : "/logos/isaac-negativo.png";
   return (
     <div className="relative">
       <PageViewTracker route={ORIGINS[origin].path} />
@@ -228,7 +231,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
           <div>
             <p className="rise d1 mb-7 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
               <span className="inline-block h-px w-8 bg-red-500" />
-              Convite especial ISAAC
+              Convite especial {partnerName}
             </p>
 
             <h1 className="rise d2 font-display text-[2.6rem] font-medium leading-[1.06] text-text-strong sm:text-[3.4rem] lg:text-[3.9rem]">
@@ -245,7 +248,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
             </h1>
 
             <p className="rise d3 mt-8 max-w-[58ch] text-[17px] leading-relaxed text-text-muted">
-              O ISAAC e a Claraval têm um convite especial para trazer resultado à sua
+              A {partnerName} e a Claraval têm um convite especial para trazer resultado à sua
               campanha de matrículas. Treinar o seu time para ampliar a atração e
               conversão de matrículas.
             </p>
@@ -274,13 +277,23 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
                 </div>
                 <div className="flex flex-col items-end gap-1.5">
                   <span className="font-display text-[1rem] text-paper-200">Convidado</span>
-                  <Image
-                    src="/logos/isaac-negativo.png"
-                    alt="ISAAC"
-                    width={1259}
-                    height={392}
-                    className="h-[34px] w-auto"
-                  />
+                  {isAlvorada ? (
+                    <Image
+                      src={partnerLogo}
+                      alt={partnerName}
+                      width={1600}
+                      height={459}
+                      className="h-[48px] w-[178px] rounded-md object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={partnerLogo}
+                      alt={partnerName}
+                      width={1259}
+                      height={392}
+                      className="h-[34px] w-auto"
+                    />
+                  )}
                 </div>
               </div>
               <p className="text-[15.5px] leading-relaxed text-text-muted">
@@ -289,7 +302,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
             </div>
 
             <p className="rise d4 mt-4 max-w-[52ch] text-[14px] leading-relaxed text-text-faint">
-              Agende uma reunião com o consultor do ISAAC para alinhar tudo e confirmar a
+              Agende uma reunião com o consultor da {partnerName} para alinhar tudo e confirmar a
               participação do seu time na formação presencial.
             </p>
 
@@ -616,7 +629,7 @@ export function LandingIsaac({ origin = "isaac" }: { origin?: Origin }) {
               Treine o seu time na Academia Claraval
             </h2>
             <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-muted">
-              Preencha o formulário para agendar a sua reunião. Um consultor do ISAAC entra
+              Preencha o formulário para agendar a sua reunião. Um consultor da {partnerName} entra
               em contato com a sua escola para alinhar tudo e confirmar a participação do
               seu time na formação presencial.
               <br />
