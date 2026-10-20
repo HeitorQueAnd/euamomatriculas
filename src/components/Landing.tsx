@@ -189,7 +189,33 @@ const BENEFITS = [
   "Acompanhamento dos atendimentos em tempo real",
 ];
 
+const PROGRAMACAO_ALVORADA = [
+  { hora: "17h00", dur: "15 min", titulo: "Credenciamento e boas-vindas", texto: "Recepção do líder e do membro do time, entrega do material de trabalho e alinhamento do que cada escola quer resolver no dia.", topicos: [] },
+  { hora: "17h15", dur: "25 min", titulo: "Campanha de matrículas: da atração à retenção", texto: "Quem já tem campanha rodando revisa e identifica os gargalos. Quem ainda não tem campanha estruturada sai daqui com ela desenhada.", topicos: ["Canais", "Funis", "Metas", "Indicadores", "ICP · definição da família ideal"] },
+  { hora: "17h40", dur: "30 min", titulo: "Canais de atração e prospecção ativa", texto: "Como parar de depender só do tráfego pago. Ativação de até 20 canais e construção da rotina de prospecção com cadências e roteiros de primeiro contato.", topicos: ["Até 20 canais ativados", "Rotina de prospecção", "Cadências e roteiros de contato"] },
+  { hora: "18h10", dur: "50 min", titulo: "Como estruturar o processo comercial", texto: "Da bagunça ao playbook: as cerimônias da rotina comercial, os processos de cada etapa e os 7 passos da matrícula desenhados para a sua escola.", topicos: ["CRM", "Cerimônias e rotina", "Playbook comercial", "Os 7 passos da matrícula"] },
+  { hora: "19h00", dur: "55 min", titulo: "A importância de uma apresentação eficaz", texto: "Estruturando a sua apresentação em introdução, desenvolvimento e conclusão, com storytelling, rapport e gatilhos mentais aplicados às matrículas.", topicos: ["Introdução, desenvolvimento e conclusão", "Storytelling nas matrículas", "Como fazer um ótimo rapport", "Gatilhos mentais", "Recursos visuais que potencializam a matrícula"] },
+  { hora: "19h55", dur: "15 min", titulo: "Coffee break especial", texto: "Pausa com harmonização de doces e salgados servida no espaço da formação. Momento de troca entre as escolas participantes.", topicos: [] },
+  { hora: "20h10", dur: "60 min", titulo: "Tinto e Tinta", texto: "Pintura guiada acompanhada de degustação de vinhos, o vinho é opcional. Um respiro no meio da formação, com foco no cuidado com o time e na união antes do último bloco.", topicos: [] },
+  { hora: "21h10", dur: "35 min", titulo: "Como contornar objeções", texto: "Conexão e confiança construídas antes de falar de preço. Cada objeção mapeada com resposta treinada e o fechamento conduzido até a assinatura.", topicos: ["Mapa de objeções", "Ancoragem de valor", "Condução até a assinatura"] },
+  { hora: "21h45", dur: "15 min", titulo: "Plano de 30 dias e certificados", texto: "O que a sua escola executa nas próximas quatro semanas, escrito antes de sair da sala. Entrega dos certificados.", topicos: [] },
+];
+
 function AlvoradaHero() {
+  return (
+    <div>
+      <p className="rise d1 mb-7 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400"><span className="inline-block h-px w-8 bg-red-500" />Convite especial Alvorada</p>
+      <h1 className="rise d2 font-display text-[2.6rem] font-medium leading-[1.06] text-text-strong sm:text-[3.4rem] lg:text-[3.9rem]">O maior <span className="relative inline-block">movimento<span aria-hidden className="absolute -bottom-1 left-0 h-[0.14em] w-full origin-left rounded-full bg-red-500" style={{ animation: "drawLine 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s backwards" }} /></span> de matrículas do Brasil</h1>
+      <p className="rise d3 mt-8 max-w-[56ch] text-[17px] leading-relaxed text-text-muted">A Alvorada e a Claraval têm um convite especial para trazer resultado à sua campanha de matrículas. Treinar o seu time para ampliar a atração e a conversão de matrículas.</p>
+      <div className="rise d3 mt-7 flex flex-wrap gap-x-10 gap-y-3.5"><div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Data</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">27 de outubro</p></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Período</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">17h às 22h</p></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-faint">Local</p><p className="mt-1.5 font-display text-[1.15rem] text-text-strong">Brasília, Distrito Federal</p></div></div>
+      <div className="rise d4 mt-7 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.045] px-[30px] py-[26px]"><div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5"><div className="flex flex-wrap items-baseline gap-3.5"><span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-text-faint">Investimento</span><span className="font-display text-[1.6rem] text-text-faint line-through">R$ 3.000,00</span></div><div className="flex flex-col items-end gap-1.5"><span className="font-display text-[1rem] text-paper-200">Convidado</span><Image src="/logos/alvorada-negativo.png" alt="Alvorada Distribuidora" width={536} height={151} className="h-10 w-auto" /></div></div></div>
+      <p className="rise d4 mt-4 flex items-center gap-2.5 text-[14px] leading-relaxed text-text-muted"><span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />Cortesia exclusiva para a formação presencial</p>
+      <div className="rise d5 mt-8 flex flex-wrap items-center gap-5"><a href="#formulario" className="group inline-flex items-center gap-2.5 rounded-full bg-red-600 px-7 py-3.5 text-[15px] font-semibold text-paper-50 shadow-[var(--shadow-red)] transition-all duration-200 hover:bg-red-500">Quero participar <ArrowRight size={17} /></a><a href="#formacao" className="group inline-flex items-center gap-2 text-[15px] font-medium text-text-muted transition-colors hover:text-text-strong">Conheça a formação <ArrowDown size={16} /></a></div>
+    </div>
+  );
+}
+
+function AlvoradaHeroLegacy() {
   return (
     <div>
       <p className="rise d1 mb-7 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-400">
@@ -230,6 +256,8 @@ function AlvoradaHero() {
 }
 
 export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTinto?: boolean }) {
+  const whatsapp = origin === "alvorada" ? "https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20confirmar%20a%20reuni%C3%A3o%20do%20convite%20Alvorada%20para%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas." : WHATSAPP;
+  const programacao = origin === "alvorada" ? PROGRAMACAO_ALVORADA : PROGRAMACAO;
   return (
     <div className="relative">
       {/* Log de acesso: registra a visita da rota em /api/track. */}
@@ -250,7 +278,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
             href="#formulario"
             className="hidden rounded-full border border-red-500/40 px-5 py-2 text-[13px] font-medium text-text-strong transition-colors hover:border-red-600 hover:bg-red-600 sm:inline-block"
           >
-            Treinar meu time
+            {origin === "alvorada" ? "Quero participar" : "Treinar meu time"}
           </a>
         </div>
       </header>
@@ -513,7 +541,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
           </ScrollReveal>
 
           <div className="mt-14 flex flex-col">
-            {PROGRAMACAO.map((b, i) => (
+            {programacao.map((b, i) => (
               <ScrollReveal key={b.hora} delay={i * 50}>
                 <div className="grid gap-8 border-t border-ink-900/[0.12] py-[26px] sm:grid-cols-[150px_1fr]">
                   <div>
@@ -613,40 +641,43 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
         <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[1fr_1.05fr]">
           <ScrollReveal className="lg:sticky lg:top-32">
             <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.25em] text-red-600">
-              Entre na formação
+              {origin === "alvorada" ? "Confirmar participação" : "Entre na formação"}
             </p>
             <h2 className="max-w-[18ch] font-display text-[2.2rem] font-medium leading-[1.1] text-ink-900 sm:text-[2.7rem]">
               Treine o seu time na Academia Claraval
             </h2>
             <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink-900/70">
-              Deixe seu contato e nossa equipe fala com você para agendar a melhor data
-              da sua escola entrar na formação. Vagas limitadas por turma.
+              {origin === "alvorada" ? (
+                <>Preencha o formulário para confirmar a sua participação. Um consultor da Claraval entra em contato com a sua escola para alinhar tudo e confirmar a participação na formação presencial.<br /><br />As vagas são limitadas e sujeitas a confirmação.</>
+              ) : (
+                <>Deixe seu contato e nossa equipe fala com você para agendar a melhor data da sua escola entrar na formação. Vagas limitadas por turma.</>
+              )}
             </p>
 
-            <div className="mt-7 max-w-[460px] rounded-2xl bg-ink-900 px-7 py-[26px]">
+            {origin !== "alvorada" && <div className="mt-7 max-w-[460px] rounded-2xl bg-ink-900 px-7 py-[26px]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-red-400">Investimento</p>
               <p className="mt-2 flex items-baseline gap-2 font-display">
                 <span className="text-[1.1rem] text-text-muted">R$</span>
                 <span className="text-[clamp(2.6rem,5vw,3.2rem)] font-semibold text-text-strong">947,00</span>
                 <span className="text-[1.1rem] text-text-muted">/mês</span>
               </p>
-            </div>
+            </div>}
 
-            <ul className="mt-9 space-y-4">
+            {origin !== "alvorada" && <ul className="mt-9 space-y-4">
               {BENEFITS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[15px] text-ink-900/70">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
                   {item}
                 </li>
               ))}
-            </ul>
+            </ul>}
 
             <div className="mt-8 border-t border-ink-900/[0.12] pt-7">
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-900/55">
               Próximas turmas presenciais · com certificado
               </p>
               <div className="flex flex-wrap gap-2.5">
-                {CITIES.map((c) => (
+                {CITIES.filter((c) => origin !== "alvorada" || c === "Brasília").map((c) => (
                   <span
                     key={c}
                     className="rounded-full border border-red-600/35 px-[18px] py-[9px] text-[14px] font-medium text-ink-900"
@@ -655,7 +686,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
                   </span>
                 ))}
                 <a
-                  href={WHATSAPP}
+                  href={whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full border border-red-600/55 bg-red-600/[0.12] px-[18px] py-[9px] text-[14px] font-semibold text-ink-900 transition-colors hover:border-red-600 hover:bg-red-600 hover:text-paper-50"
@@ -667,7 +698,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
           </ScrollReveal>
 
           <ScrollReveal delay={120}>
-            <LeadForm origin={origin} />
+            <LeadForm origin={origin} alvorada={origin === "alvorada"} />
           </ScrollReveal>
         </div>
       </section>
@@ -697,7 +728,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
 
       {/* WhatsApp flutuante */}
       <a
-        href={WHATSAPP}
+        href={whatsapp}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp"

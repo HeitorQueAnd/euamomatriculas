@@ -29,7 +29,7 @@ declare module "react" {
  * (qrcode x revista). O loader do RD (em layout.tsx) intercepta o submit e
  * registra a conversao; aqui so tratamos o preventDefault e o estado de sucesso.
  */
-export function LeadForm({ origin }: { origin: Origin }) {
+export function LeadForm({ origin, alvorada = false }: { origin: Origin; alvorada?: boolean }) {
   const { path, conversionIdentifier, label } = ORIGINS[origin];
 
   const [nome, setNome] = useState("");
@@ -87,11 +87,22 @@ export function LeadForm({ origin }: { origin: Origin }) {
   }
 
   if (status === "success") {
+    if (alvorada) {
+      const firstName = nome.trim().split(/\s+/)[0] || "você";
+      return (
+        <div className="rounded-3xl border border-paper-200 bg-white p-10 text-center shadow-[0_24px_60px_-32px_rgba(20,13,15,0.35)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-500 text-paper-50"><Check size={30} strokeWidth={2.5} /></div>
+          <h3 className="mt-6 font-display text-2xl text-ink-900">Participação enviada, {firstName}</h3>
+          <p className="mx-auto mt-3 max-w-[38ch] text-[15px] leading-relaxed text-ink-700/70">Um consultor da Claraval entra em contato com a sua escola para alinhar tudo e confirmar a participação na formação presencial.</p>
+          <a href="https://wa.me/5561999397887?text=Ol%C3%A1!%20Quero%20confirmar%20a%20reuni%C3%A3o%20do%20convite%20Alvorada%20para%20a%20forma%C3%A7%C3%A3o%20Eu%20Amo%20Matr%C3%ADculas." target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-paper-50">Falar no WhatsApp <Send size={16} /></a>
+        </div>
+      );
+    }
     const firstName = nome.trim().split(/\s+/)[0] || "você";
     const clientReferenceId = sanitizeReference(`${nome}__${escola}__${telefone.replace(/\D/g, "")}`);
     return (
       <div className="rounded-3xl border border-paper-200 bg-white p-10 text-center shadow-[0_24px_60px_-32px_rgba(20,13,15,0.35)]">
-        <Script src="https://js.stripe.com/v3/buy-button.js" strategy="afterInteractive" />
+        {!alvorada && <Script src="https://js.stripe.com/v3/buy-button.js" strategy="afterInteractive" />}
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-500 text-paper-50">
           <Check size={30} strokeWidth={2.5} />
         </div>
