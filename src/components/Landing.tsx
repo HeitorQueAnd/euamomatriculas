@@ -182,7 +182,12 @@ const FOTOS = [
   { src: "/fotos/tela-palmeira.jpg", alt: "Tela da experiência Tinto e Tinta", position: "object-[center_35%]" },
 ];
 
-const CITIES = ["Brasília", "São Paulo", "Goiânia"];
+const CITIES = [
+  "Brasília · 27 de outubro",
+  "São Paulo · 04 de novembro",
+  "Uberlândia · 10 de novembro",
+  "Salvador · 24 de novembro",
+];
 
 const BENEFITS = [
   "Treinamentos online semanais ao vivo",
@@ -661,6 +666,7 @@ export function Landing({ origin, hideTinto = false }: { origin: Origin; hideTin
                 <span className="text-[clamp(2.6rem,5vw,3.2rem)] font-semibold text-text-strong">947,00</span>
                 <span className="text-[1.1rem] text-text-muted">/mês</span>
               </p>
+              <p className="mt-2 text-[12px] leading-relaxed text-text-muted">Experiência presencial avulsa: R$ 3.000,00</p>
             </div>}
 
             {origin !== "alvorada" && <ul className="mt-9 space-y-4">
