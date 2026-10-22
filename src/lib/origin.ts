@@ -17,12 +17,13 @@
  *  /vlupt     -> convite da parceria VLUPT
  *  /isaac     -> convite da parceria ISAAC
  *  /alvorada  -> convite da parceria Alvorada Distribuidora
+ *  /teachy     -> convite da parceria Teachy
  *
  * Para criar uma rota nova: adicione a origem aqui e crie o
  * `src/app/<rota>/page.tsx` renderizando <Landing origin="..." />. O tracking
  * e o /admin passam a contar a rota automaticamente.
  */
-export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac" | "alvorada";
+export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac" | "alvorada" | "teachy";
 
 export interface OriginConfig {
   /** Rota da landing que usa esta origem — tambem e a chave no log de acesso. */
@@ -63,6 +64,11 @@ export const ORIGINS: Record<Origin, OriginConfig> = {
     path: "/alvorada",
     conversionIdentifier: "euamomatriculas-alvorada",
     label: "Eu Amo Matriculas - Convite Alvorada Distribuidora",
+  },
+  teachy: {
+    path: "/teachy",
+    conversionIdentifier: "euamomatriculas-teachy",
+    label: "Eu Amo Matriculas - Convite Teachy",
   },
 };
 
