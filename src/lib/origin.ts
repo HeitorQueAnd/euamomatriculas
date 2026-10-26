@@ -18,12 +18,15 @@
  *  /isaac     -> convite da parceria ISAAC
  *  /alvorada  -> convite da parceria Alvorada Distribuidora
  *  /teachy     -> convite da parceria Teachy
+ *  /ischolar   -> convite da parceria IScholar
+ *  /ischolar-uberlandia -> convite da parceria IScholar em Uberlândia
+ *  /thomas-jefferson -> convite da parceria Casa Thomas Jefferson
  *
  * Para criar uma rota nova: adicione a origem aqui e crie o
  * `src/app/<rota>/page.tsx` renderizando <Landing origin="..." />. O tracking
  * e o /admin passam a contar a rota automaticamente.
  */
-export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac" | "alvorada" | "teachy";
+export type Origin = "qrcode" | "revista" | "palestra" | "vlupt" | "isaac" | "alvorada" | "teachy" | "ischolar" | "ischolaruberlandia" | "thomasjefferson";
 
 export interface OriginConfig {
   /** Rota da landing que usa esta origem — tambem e a chave no log de acesso. */
@@ -69,6 +72,21 @@ export const ORIGINS: Record<Origin, OriginConfig> = {
     path: "/teachy",
     conversionIdentifier: "euamomatriculas-teachy",
     label: "Eu Amo Matriculas - Convite Teachy",
+  },
+  ischolar: {
+    path: "/ischolar",
+    conversionIdentifier: "euamomatriculas-ischolar",
+    label: "Eu Amo Matriculas - Convite IScholar",
+  },
+  ischolaruberlandia: {
+    path: "/ischolar-uberlandia",
+    conversionIdentifier: "euamomatriculas-ischolar-uberlandia",
+    label: "Eu Amo Matriculas - Convite IScholar Uberlandia",
+  },
+  thomasjefferson: {
+    path: "/thomas-jefferson",
+    conversionIdentifier: "euamomatriculas-thomas-jefferson",
+    label: "Eu Amo Matriculas - Convite Casa Thomas Jefferson",
   },
 };
 
