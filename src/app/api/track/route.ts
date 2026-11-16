@@ -1,5 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { appendLog, type LogEntry, type LogType } from "@/lib/logs";
+import { avisarClara } from "@/lib/clara";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -43,6 +44,11 @@ export async function POST(request: Request) {
     entry.email = body.email?.slice(0, 200);
     entry.telefone = body.telefone?.slice(0, 40);
     entry.escola = body.escola?.slice(0, 200);
+
+    // Avisa a Clara depois de responder ao visitante (não atrasa nem quebra o
+    // form). Só envia se as variáveis CLARA_LP_* estiverem configuradas.
+    const lead = { ...entry };
+    after(() => avisarClara(lead));
   }
 
   try {
